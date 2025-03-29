@@ -1,15 +1,34 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    line-height: 1.6;
+/* Reset de márgenes para body y html */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
+/* Header ajustado */
+.navbar {
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #0044cc;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal ajustado */
 .container {
     width: 90%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
+    box-sizing: border-box;
 }
+
+
 
 h1, h2 {
     text-align: center;
@@ -53,7 +72,16 @@ input[type="text"], input[type="date"], input[type="email"], input[type="tel"], 
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    font-weight: 200;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-columnas, .footer-socials {
+    flex: 1;
+    min-width: 200px;
+    margin: 15px 0;
 }
 
 .footer-logo img {
@@ -94,21 +122,41 @@ input[type="text"], input[type="date"], input[type="email"], input[type="tel"], 
 
 
 
-/*  Pie de Pagina - 2 */
+/* Footer ajustado */
 footer {
-    text-align: center;
-    padding: 2px 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     background-color: #053aaa;
     color: #71bfbc;
-    font-size: 20px;
-    font-weight: 200;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    
+    box-sizing: border-box;
 }
 
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+/* Ajustes para el footer-texto */
+#footer-texto {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #053aaa;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#footer-texto p {
+    margin: 0;
+    padding: 0;
+}
 .footer-container {
     background-color: #053aaa; /* Color azul del fondo */
     padding: 1px 20px 30px; /* Espaciado dentro del cuadro */
@@ -116,13 +164,6 @@ footer {
     position: relative; /* Asegura que el footer se posicione correctamente */
 }
 
-#footer-texto {
-    position: relative; /* Asegura que no salga del contenedor */
-    bottom: 0; /* Lo mantiene dentro */
-    width: 100%;
-    font-size: 15px;
-    color: #a0f4ff; /* Color del texto */
-}
 
 .footer-info h4{
     color: #71bfbc;
@@ -131,11 +172,6 @@ footer {
     color: #71bfbc;
 }
 
-#footer-texto p{
-    margin-top: 0;
-    padding-top: 0;
-    background-color: #053aaa;
-}
 
 /*iconos redes*/
 .footer-socials {
@@ -172,17 +208,6 @@ footer {
     text-decoration: none;
 }
 
-/* Estilos para el encabezado */
-.navbar {
-    background-color: #0044cc;
-    padding: 20px;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-}
 
 .navbar .logo {
     flex: 0 0 auto;
@@ -268,4 +293,56 @@ footer {
 
 .boton-prematricula:hover {
     background-color: #133986; /* Azul más oscuro al pasar el mouse */
+}
+
+.footer-columnas {
+    text-align: center;
+}
+
+.footer-columnas ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footer-columnas li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.footer-columnas a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-columnas a:hover {
+    color: #d7da12;
+    text-decoration: underline;
+}
+/*---------------------------------------------*/
+
+/* Botón de WhatsApp flotante */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 80px; /* Colocado arriba de la flecha */
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 9998; /* Un nivel menos que la flecha */
+    transition: transform 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-btn img {
+    width: 30px;
+    height: 30px;
 }
