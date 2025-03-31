@@ -118,38 +118,22 @@ function mostrarAsignaturas() {
 document.addEventListener("DOMContentLoaded", () => {
     mostrarAsignaturas();
 });
-// Datos simulados del estudiante
-const estudiante = {
-    nombre: "Juan Pérez",
-    documento: "123456789",
-    grado: "Cuarto 2024",
-    fechaNacimiento: "15/04/2012"
-};
 
-// Función para mostrar el perfil del estudiante
-function mostrarPerfil() {
-    document.getElementById("perfilNombre").value = estudiante.nombre;
-    document.getElementById("perfilDocumento").value = estudiante.documento;
-    document.getElementById("perfilGrado").value = estudiante.grado;
-    document.getElementById("perfilFechaNacimiento").value = estudiante.fechaNacimiento;
-}
 
 // Llamar a la función cuando cargue la página
 document.addEventListener("DOMContentLoaded", () => {
     mostrarPerfil();
 });
 
-// Función mejorada para cerrar sesión
+// Simulación de cierre de sesión
 function cerrarSesion() {
-    const confirmar = confirm("¿Estás seguro de que quieres cerrar sesión?");
-    
+    let confirmar = window.confirm("¿Estás seguro de que quieres cerrar sesión?");
+
     if (confirmar) {
-        // Aquí podrías añadir lógica para limpiar la sesión
-        console.log("Cerrando sesión...");
-        window.location.href = "home.html";
+        alert("Cerrando sesión...");
+        return true; // Permite la redirección
     } else {
-        console.log("Cierre de sesión cancelado");
+        alert("Acción cancelada."); // Solo muestra el mensaje sin opción de aceptar
+        return false; // Evita la redirección
     }
-    
-    return confirmar;
 }
