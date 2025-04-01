@@ -321,7 +321,9 @@ footer {
 }
 
 .footer-logo img {
-    max-width: 350px; /* Ajusta el tamaño del logo */
+    max-width:130px; /* Ajusta el tamaño del logo */
+    position: relative;
+    margin-top: 90px;
 }
 
 .footer-info, .footer-links, .footer-socials {
@@ -400,6 +402,7 @@ footer {
     flex-direction: column; /* Apila los elementos verticalmente */
     align-items: center; /* Centra los elementos */
     text-align: center; /* Asegura que el texto y los íconos estén alineados */
+    margin-top: 18px;
 }
 
 .footer-socials h4 {
@@ -418,6 +421,7 @@ color: #71bfbc;
 
 .footer-socials ul li {
     display: inline-block;
+    margin-top: 60px;
 }
 
 /* Estilos Responsivos */
@@ -463,8 +467,6 @@ color: #71bfbc;
     width: 40px; /* Ajusta el tamaño de los íconos */
     height: auto;
 }
-
-/* Añade estas media queries al final de tu archivo CSS */
 
 /* Media Queries para Responsividad */
 @media (max-width: 1200px) {
