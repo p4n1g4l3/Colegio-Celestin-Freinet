@@ -123,10 +123,24 @@ body {
 
 
 /* Botón de inicio de sesión */
+.login-btn a {
+    background-color: #4CAF50;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.login-btn a:hover {
+    background-color: #45a049;
+    text-decoration: none !important;
+}
+
+/* Botón de inicio de sesión */
 .btn-iniciar-sesion {
     background-color: #053aaa;
     color: white;
     padding: 10px 15px;
+    top: 3px; /* Ajusta este valor según necesites */
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
@@ -136,7 +150,7 @@ body {
 }
 
 .btn-iniciar-sesion:hover {
-    background-color: #021f5a;
+    background-color: #083081;
 }
 
 /*header-contenido*/

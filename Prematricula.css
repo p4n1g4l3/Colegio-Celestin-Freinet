@@ -1,5 +1,6 @@
 /* Reset de márgenes para body y html */
 html, body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
