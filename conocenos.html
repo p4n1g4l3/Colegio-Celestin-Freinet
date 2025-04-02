@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conocenos</title>
+    <link rel="icon" href="img/logoactualizado.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos_conocenos.css">
 </head>
 <body>
@@ -16,23 +17,22 @@
     </header>
 
     <header>
-        <div class="menu">
-            <ul>
+        <div class="menu-container">
+            <ul class="main-menu">
                 <li><a href="home.html">Inicio</a></li>
-
-                <!-- submenu -->
-                <li>
-                    <a href="conocenos.html">Conocenos</a>
-                    <ul class="sub-menu_conocenos">
+                
+                <li class="has-submenu">
+                    <a href="#" onclick="toggleMenu(event)">Conócenos <span class="arrow">▼</span></a>
+                    <ul class="submenu">
                         <li><a href="conocenos.html">Vision - Mision</a></li>
                         <li><a href="Historia.html">Historia</a></li>
                         <li><a href="Himno.html">Himno</a></li>
-                        </ul>
+                    </ul>
                 </li>
-            
+                
                 <li><a href="actividades.html">Actividades</a></li>
                 <li><a href="PreMatricula.html">Pre-Matricula</a></li>
-                <li><a href="contactenos.html">Contactenos</a></li>
+                <li><a href="contactenos.html">Contactenos</a></li><br>
             </ul>
 
                     <!-- Botón de inicio de sesión alineado a la derecha -->
@@ -183,5 +183,7 @@
                 </div>
             </footer>
         
+    <script src="conocenos.js"></script>
+
 </body>
 </html>
