@@ -13,7 +13,7 @@
     color: white;
     padding: 18px;
     left: 0px;
-    right: 20px;
+    right: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,8 +53,6 @@
     position:fixed;
     top: 0px;
     height: calc(103vh );
-    overflow-y: auto;
-    transition: transform 0.3s ease;
 }
 
 .sidebar h2 {
