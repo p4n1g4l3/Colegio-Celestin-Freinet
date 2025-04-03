@@ -16,7 +16,7 @@ html, body {
 }
 
 .logo img {
-    width: 300px; 
+    width: 300px;
     height: 93.5px;
     position: absolute; /* Posiciona el logo de forma absoluta respecto al contenedor */
     top: 60px;

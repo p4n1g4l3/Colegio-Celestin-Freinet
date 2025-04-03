@@ -25,7 +25,6 @@ body {
     width: 300px; 
     height: auto;
     position: absolute; /* Posiciona el logo de forma absoluta respecto al contenedor */
-    /* top: 50%; Desplaza el logo 50% hacia abajo */
     top: 60px;
     left: 50%; /* Desplaza el logo 50% hacia la derecha */
     transform: translate(-50%, -50%); /* Compensa el desplazamiento del logo centrado */
