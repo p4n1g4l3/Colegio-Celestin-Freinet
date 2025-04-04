@@ -81,10 +81,11 @@ body {
 /* Estilos del submenú */
 .submenu {
     display: none;
+    list-style-type: none;
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #0539aaa4;
+    background-color: #dad9d989;
     padding: 10px 0;
     min-width: 200px;
     z-index: 1000;
@@ -102,6 +103,7 @@ body {
 
 .submenu li {
     padding: 8px 15px;
+    list-style: none;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -110,14 +112,10 @@ body {
 }
 
 .submenu a {
-    color: white !important;
+    color: rgb(4, 75, 72);
     font-size: 16px;
 }
 
-.submenu a:hover {
-    background-color: #4b7ae1;
-    text-decoration: none !important;
-}
 
 
 /* Botón de inicio de sesión */
