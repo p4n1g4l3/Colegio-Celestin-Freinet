@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Docentes</title>
+    <link rel="stylesheet" href="docentes.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+ 
+
+    <body>
+
+        <!-- BARRA LATERAL -->
+        <div class="sidebar">
+          <h2>DOCENTES</h2>
+          <ul>    
+              <li>
+                  <a href="#"><i class="fas fa-users"></i> Cursos</a>
+                  <ul class="sub-menu_cursos">
+                    <li><a href="#" id="showCalificaciones"><i class="fas fa-book"></i> Calificaciones</a></li>
+                      <li><a href="#"><i class="fas fa-bullhorn"></i> Circulares</a></li>
+                  </ul>
+              </li>
+              <li><a href="Horarios.html"><i class="fas fa-book"></i> Horarios</a></li>
+              <li><a href="#"><i class="fas fa-clipboard"></i> Planillas</a></li>
+              <li><a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+              <div class="logo">
+                  <img src="./img/logoactualizado.png" alt="Logo" />
+              </div>
+          </ul>
+        </div>
+      
+        <!-- ENCABEZADO -->
+        <header>
+          <h1>Bienvenido al Panel de Docentes</h1>
+          <p>Administra la información de los estudiantes y cursos</p>
+        </header>
+      
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="main-content">
+      
+          <!-- SECCIÓN DE CURSOS -->
+          <section class="users">
+            <h2>Listado de cursos </h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Curso</th>
+                  <th>Docente</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Preescolar</td>
+                  <td>Nikol Diaz</td>
+                  <td class="dropdown-container">
+                    <button class="view dropdown-btn">Ver</button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Datos del estudiante</a></li>
+                      <li><a href="#">Boletin</a></li>
+                      <li><a href="#">Estado</a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+      
+          <!-- SECCIÓN DE CALIFICACIONES -->
+          <section class="calificaciones-section" style="display: none;">
+            <div class="header">
+              <h2>📘 Planilla de Calificaciones</h2>
+              <p><strong>Sede:</strong> Principal | <strong>Grado:</strong> Noveno | <strong>Área:</strong> Investigación</p>
+              <p><strong>Docente:</strong> Nombre del Docente | <strong>Curso:</strong> 01 | <strong>Periodo:</strong> 1</p>
+            </div>
+      
+            <div class="table-container">
+              <table id="gradeTable">
+                <thead>
+                  <tr>
+                    <th rowspan="2">No.</th>
+                    <th rowspan="2">Código</th>
+                    <th rowspan="2">Apellidos/Nombres</th>
+                    <th colspan="8" class="section-header">📖 Conceptual (35%)</th>
+                    <th colspan="8" class="section-header">📝 Procedimental (35%)</th>
+                    <th colspan="3" class="section-header">🌟 Actitudinal (30%)</th>
+                    <th rowspan="2">🎯 Definitiva</th>
+                    <th rowspan="2">Acciones</th>
+                  </tr>
+                  <tr>
+                    <th>N1</th><th>N2</th><th>N3</th><th>N4</th><th>N5</th><th>N6</th><th>N7</th><th>N8</th>
+                    <th>N1</th><th>N2</th><th>N3</th><th>N4</th><th>N5</th><th>N6</th><th>N7</th><th>N8</th>
+                    <th>N1</th><th>N2</th><th>N3</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+            </div>
+      
+            <button id="addRowBtn">➕ Agregar Estudiante</button>
+          </section>
+      
+        </div>
+      
+        <script src="docentes.js"></script>
+        <script src="calificaciones.js"></script>
+      </body>
