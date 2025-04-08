@@ -130,10 +130,12 @@ function cerrarSesion() {
     let confirmar = window.confirm("¿Estás seguro de que quieres cerrar sesión?");
 
     if (confirmar) {
-        alert("Cerrando sesión...");
-        return true; // Permite la redirección
+        // Aquí podrías añadir lógica para limpiar la sesión
+        console.log("Cerrando sesión...");
+        window.location.href = "home.html";
     } else {
-        alert("Acción cancelada."); // Solo muestra el mensaje sin opción de aceptar
-        return false; // Evita la redirección
+        console.log("Cierre de sesión cancelado");
     }
+
+    return confirmar;
 }

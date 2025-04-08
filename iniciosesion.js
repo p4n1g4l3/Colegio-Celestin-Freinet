@@ -1,6 +1,7 @@
 const usuarios = [
     { username: "adminUser", password: "adminPass", role: "administrador" },
-    { username: "studentUser", password: "studentPass", role: "estudiante" }
+    { username: "studentUser", password: "studentPass", role: "estudiante" },
+    { username: "docentUser", password: "docentPass", role: "docente" }
 ];
 
 document.getElementById("login-form").addEventListener("submit", function(event) {
@@ -25,6 +26,8 @@ document.getElementById("login-form").addEventListener("submit", function(event)
             window.location.href = "administrador.html";
         } else if (userType === "estudiante") {
             window.location.href = "inicio_estudiante.html";
+        } else if (userType === "docente") {
+            window.location.href = "docentes.html";
         }
     }
 });
