@@ -414,25 +414,32 @@
                     </table>
                 </section>
 
-            <section id="calificaciones" class="section">
-                <h2>Calificaciones</h2>
-                <p>Aquí puedes consultar tus calificaciones.</p>
-                    <table class="grades-table">
-                        <thead>
-                            <tr>
-                                <th>Asignatura</th>
-                                <th>Nota</th>
-                                <th>Observaciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="gradesBody">
-                            <!-- Se llenará con JavaScript -->
-                        </tbody>
+                <section id="calificaciones" class="section">
+                    <h2>Calificaciones</h2>
+                    <p>Aquí puedes consultar tus calificaciones.</p>
+                  
+                    <div>
+                      <label for="materiaSelect">Seleccionar Asignatura:</label>
+                      <select id="materiaSelect" onchange="mostrarCuadro()">
+                        <option value="investigacion">Investigación</option>
+                        <option value="matematicas">Matemáticas</option>
+                        <option value="ingles">Inglés</option>
+                      </select>
+                    </div>
+                  
+                    <table class="grades-table" style="margin-top: 20px;">
+                      <thead id="gradeHeader">
+                        <!-- Se llenará dinámicamente -->
+                      </thead>
+                      <tbody id="gradesBody">
+                        <!-- Se llenará con JavaScript -->
+                      </tbody>
                     </table>
-                </section>
-                
-            </section>
-
+                    <div class="btn-group" style="margin-top: 20px;">
+                        <button onclick="descargarPDF()">📄 Descargar PDF</button>
+                        <button onclick="descargarExcel()">📊 Descargar Excel</button>
+                      </div>
+                  </section>
             <section id="observador" class="section">
                 <h2>Observador del Estudiante</h2>
                 <p>Aquí puedes ver las observaciones registradas sobre tu desempeño.</p>

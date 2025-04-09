@@ -42,10 +42,7 @@ function mostrarCalificaciones() {
     });
 }
 
-// Llamar a la función cuando se muestra la sección de calificaciones
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarCalificaciones();
-});
+
 // Datos simulados del observador
 const observaciones = [
     {
@@ -98,22 +95,6 @@ const asignaturas = [
     { nombre: "Arte", docente: "Prof. Sofía Martínez", horario: "Viernes 2:00 - 4:00 PM" }
 ];
 
-// Función para mostrar las asignaturas en la tabla
-function mostrarAsignaturas() {
-    const subjectsBody = document.getElementById("subjectsBody");
-    subjectsBody.innerHTML = ""; // Limpiar antes de agregar datos
-
-    asignaturas.forEach(asignatura => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td><input type="text" value="${asignatura.nombre}" readonly></td>
-            <td><input type="text" value="${asignatura.docente}" readonly></td>
-            <td><input type="text" value="${asignatura.horario}" readonly></td>
-        `;
-        subjectsBody.appendChild(row);
-    });
-}
-
 // Llamar a la función cuando se muestra la sección de asignaturas
 document.addEventListener("DOMContentLoaded", () => {
     mostrarAsignaturas();
@@ -140,6 +121,53 @@ function cerrarSesion() {
     return confirmar;
 }
 
+const datosMaterias = {
+    investigacion: {
+      actividades: ["Investigación", "Quiz", "Exposición"],
+      notas: ["4.5", "3.8", "5.0"],
+      observaciones: ["Muy bien", "Puede mejorar", "Excelente"]
+    },
+    matematicas: {
+      actividades: ["Ejercicio 1", "Evaluación", "Taller"],
+      notas: ["3.5", "4.0", "4.2"],
+      observaciones: ["Regular", "Buena", "Bien hecho"]
+    },
+    ingles: {
+      actividades: ["Listening", "Speaking", "Grammar"],
+      notas: ["4.8", "4.5", "4.6"],
+      observaciones: ["Excelente", "Muy buena", "Correcta"]
+    }
+  };
+
+  function mostrarCuadro() {
+    const materia = document.getElementById("materiaSelect").value;
+    const data = datosMaterias[materia];
+
+    const header = document.getElementById("gradeHeader");
+    const body = document.getElementById("gradesBody");
+
+    // Limpiar tabla
+    header.innerHTML = "";
+    body.innerHTML = "";
+
+    // Encabezados dinámicos
+    const headerRow = document.createElement("tr");
+    headerRow.innerHTML = `<th></th>` + data.actividades.map((_, i) => `<th>Actividad ${i + 1}</th>`).join("");
+    header.appendChild(headerRow);
+
+    // Filas: Actividad / Nota / Observación
+    const filaAct = document.createElement("tr");
+    filaAct.innerHTML = `<td>Actividad</td>` + data.actividades.map(a => `<td>${a}</td>`).join("");
+    body.appendChild(filaAct);
+
+    const filaNota = document.createElement("tr");
+    filaNota.innerHTML = `<td>Nota</td>` + data.notas.map(n => `<td>${n}</td>`).join("");
+    body.appendChild(filaNota);
+
+    const filaObs = document.createElement("tr");
+    filaObs.innerHTML = `<td>Observación</td>` + data.observaciones.map(o => `<td>${o}</td>`).join("");
+    body.appendChild(filaObs);
+  }
 document.getElementById("search").addEventListener("keyup", function() {
     let filter = this.value.toLowerCase();
     let rows = document.querySelectorAll("#table-body tr");
