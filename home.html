@@ -12,6 +12,8 @@
 </head>
 <body>
 
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
     <header class="navbar">
         <div class="logo">
             <img src="./img/logo_colegio_cf.png" alt="Logo" />
@@ -20,7 +22,7 @@
 
     <header>
         <div class="menu-container">
-            <ul class="main-menu">
+            <ul class="main-menu" id="mainMenu">
                 <li><a href="home.html">Inicio</a></li>
                 
                 <li class="has-submenu">
@@ -34,14 +36,18 @@
                 
                 <li><a href="actividades.html">Actividades</a></li>
                 <li id="menuPrematricula" style="display: none;"><a href="PreMatricula.html">Pre-Matricula</a></li>
-                <li><a href="contactenos.html">Contactenos</a></li><br>
+                <li><a href="contactenos.html">Contactenos</a></li>
+                
+                <!-- Botón de inicio de sesión en versión móvil -->
+                <li class="mobile-login-btn" style="display: none;">
+                    <a href="inicio_sesion.html" class="btn-iniciar-sesion">Iniciar Sesión</a>
+                </li>
             </ul>
 
-                    <!-- Botón de inicio de sesión alineado a la derecha -->
-        <a href="inicio_sesion.html" class="btn-iniciar-sesion">Iniciar Sesión</a>
+            <!-- Botón de inicio de sesión en versión desktop -->
+            <a href="inicio_sesion.html" class="btn-iniciar-sesion desktop-login-btn">Iniciar Sesión</a>
         </div>
     </header>
-
 
 <!-- Sección del banner con carrusel -->
 <header class="banner">
@@ -84,16 +90,12 @@
             Tu navegador no soporta videos.
         </video>
     </div>
-
 </section>
-
 
 <!-- 🔹 Contenedor del Número y la Imagen -->
 <section class="info-con-banner" id="seccion-actividades">
-    
     <!-- Se llenará dinámicamente con las novedades -->
 </section>
-
 
 <section class="segunda-seccion">
     <div class="titulo">NUESTRAS METAS ALCANZADAS</div>
@@ -119,7 +121,6 @@
         </div>
     </div>
 </section>
-
 
 <!-- pie de pagina-->
 <div>
@@ -163,11 +164,10 @@
                 </ul>
             </div>
 
-
             <div class="footer-columnas">
                 <h3>Contactanos</h3>
                 <p>rectoria@cfn.edu.co</p> <br>
-                <a href="https://maps.app.goo.gl/7LtrhBvfcwVcMeai8"target="_blank" id = "hola">Cl 22a #11447<br> Sogamoso, Boyacá</a>
+                <a href="https://maps.app.goo.gl/7LtrhBvfcwVcMeai8" target="_blank" id="hola">Cl 22a #11447<br> Sogamoso, Boyacá</a>
             </div>
         </div>
     </footer>
@@ -178,7 +178,6 @@
             <p>&copy; 2024 Colegio Celestin Freinet / Todos los derechos reservados pertenecen a PSGCT</p>
     </footer>
 
-
     <script src="script.js"></script>
     <script src="flecha.js"></script>
     <script src="contador.js"></script>
@@ -186,6 +185,31 @@
     <script src="Accesibilidad/custom.js"></script>
     <script src="Accesibilidad/sienna.js"></script>
     <script src="configuracion.js"></script>
+    
+    <script>
+        // Toggle del menú móvil
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const menu = document.getElementById('mainMenu');
+            menu.classList.toggle('open');
+        });
+        
+        // Mostrar/ocultar botón de login según el tamaño de pantalla
+        function adjustLoginButton() {
+            const mobileLogin = document.querySelector('.mobile-login-btn');
+            const desktopLogin = document.querySelector('.desktop-login-btn');
+            
+            if (window.innerWidth <= 992) {
+                mobileLogin.style.display = 'block';
+                desktopLogin.style.display = 'none';
+            } else {
+                mobileLogin.style.display = 'none';
+                desktopLogin.style.display = 'block';
+            }
+        }
+        
+        // Ejecutar al cargar y al redimensionar
+        window.addEventListener('load', adjustLoginButton);
+        window.addEventListener('resize', adjustLoginButton);
+    </script>
 </body>
 </html>
-
