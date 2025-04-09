@@ -130,12 +130,18 @@ function cerrarSesion() {
     let confirmar = window.confirm("¿Estás seguro de que quieres cerrar sesión?");
 
     if (confirmar) {
-        // Aquí podrías añadir lógica para limpiar la sesión
-        console.log("Cerrando sesión...");
-        window.location.href = "home.html";
+        alert("Cerrando sesión...");
+        return true; // Permite la redirección
     } else {
-        console.log("Cierre de sesión cancelado");
+        alert("Acción cancelada."); // Solo muestra el mensaje sin opción de aceptar
+        return false; // Evita la redirección
     }
-
-    return confirmar;
 }
+document.getElementById("search").addEventListener("keyup", function() {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll("#table-body tr");
+    rows.forEach(row => {
+        let text = row.innerText.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+    });
+});

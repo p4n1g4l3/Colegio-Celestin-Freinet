@@ -222,3 +222,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ------------------------------------------------
 
+// Función para cambiar el estado
+function togglePrematriculas() {
+    const habilitado = document.getElementById('togglePrematriculas').checked;
+    localStorage.setItem('prematriculasHabilitadas', habilitado);
+    actualizarTextoEstado(habilitado);
+    
+    // Enviar al servidor (ejemplo con fetch)
+    fetch('/api/toggle-prematriculas', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ habilitado })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Estado actualizado:', data);
+        // Disparar evento para actualizar otras pestañas
+        const event = new Event('prematriculaChanged');
+        window.dispatchEvent(event);
+        // Actualizar en esta pestaña
+        actualizarMenuPrematriculas();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}

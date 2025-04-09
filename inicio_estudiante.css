@@ -147,18 +147,15 @@
 
 /* Colores dinámicos para las calificaciones */
 .grade.good {
-    background: #4CAF50; /* Verde */
-    color: white;
+    color:#4CAF50;
 }
 
 .grade.regular {
-    background: #FFC107; /* Amarillo */
-    color: black;
+    color:  #d4850f;;
 }
 
 .grade.bad {
-    background: #F44336; /* Rojo */
-    color: white;
+    color: #F44336;
 }
 /* Estilos para la tabla del observador */
 .observer-table {
@@ -360,6 +357,8 @@ input, select {
 /* Contenedor del formulario */
 #formulario {
     width: 100%;
+    text-align-last: center;
+    background-color: rgb(255, 255, 255);
     max-width: 1200px; /* Ajusta este valor según necesites */
 }
 
@@ -437,4 +436,72 @@ input, select {
     .form-column {
         min-width: 100%;
     }
+}
+      
+        
+.ver-asignaturas {
+    text-align: center;
+}
+
+.ver-asignaturas h2 {
+    font-size: 2rem;
+}
+
+.ver-asignaturas .table {
+    font-size: 1.2rem;
+    margin: auto;
+}
+
+.ver-asignaturas .table th {
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+}
+
+.ver-asignaturas .header-table {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.ver-asignaturas .search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.ver-asignaturas .search-container input {
+    width: 50%;
+    font-size: 1.1rem;
+}
+/* Centrar la tabla de información general */
+.header-table th, .header-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Centrar el título de la tabla de asignaturas */
+.table th {
+    text-align: center;
+}
+
+/* Centrar el contenido de la tabla */
+.table td {
+    text-align: center;
+}
+/* Mover la tabla de información general hacia la derecha */
+.header-table {
+    margin-left: 0%;
+    width: 80%; /* Ajusta el ancho según necesites */
+}
+.header-tbody {
+    margin-left: 50px;
+    width: 80%; /* Ajusta el ancho según necesites */
+}
+/* Alinear el contenido de la tabla al centro y moverla hacia la derecha */
+.container {
+    margin-left: 10%;
+    max-width: 90%;
+}
+.col-md-8 {
+    margin-left: 20%;
+    max-width: 80%;
 }

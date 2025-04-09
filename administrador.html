@@ -24,6 +24,7 @@
                 <li><a href="#novedades">Novedades</a></li>
                 <li><a href="#usuarios">Usuarios</a></li>
                 <li><a href="#estado">Estado</a></li>
+                <li><a href="#configuracion">Configuración</a></li>
                 <li><a href="#circulares">Aplicantes</a></li>
                 <li><a href="#galeria">Cursos</a></li>
                 <div class="logo">
@@ -117,6 +118,23 @@
                         </tr>
                     </tbody>
                 </table>
+            </section>
+
+            <!-- Agregar esta nueva sección antes del cierre de </div> -->
+            <section id="configuracion">
+                <h2>Configuración del Sitio</h2>
+                
+                <div class="configuracion-item">
+                    <h3>Control de Pre-Matrículas</h3>
+                    <div class="toggle-container">
+                        <label class="switch">
+                            <input type="checkbox" id="togglePrematriculas" onchange="togglePrematriculas()">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="estadoPrematriculas" class="estado-texto">Habilitado</span>
+                    </div>
+                    <p class="descripcion-config">Activa o desactiva la visibilidad del enlace de pre-matrículas en el sitio público.</p>
+                </div>
             </section>
 
             <section id="estado">
