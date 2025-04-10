@@ -479,142 +479,141 @@ footer {
     text-decoration: underline;
 }
 
-/* Estilos Responsivos */
-@media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Cambia a columa en pantallas pequeñas */
-        align-items: flex-start; /* Alinea los elementos al inicio */
-        width: 130%;
-    }
-
-    .menu {
-        margin-left: 0; /* Elimina margen izquierdo */
-        
-    }
-
-    .menu-icon {
-        padding-top: 10px;
-    }
-
-
-    #nav-links {
-        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
-        margin-top: 100px;
-    }
-
-    .menu-icon {
-        display: block; /* Muestra el icono de menú */
-    }
+/* Botón de menú hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto en desktop */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    color: #000000;
+    padding: 10px;
 }
 
-@media screen and (max-width: 480px) {
-    .titulo-1 {
-        font-size: 28px; /* Ajusta el tamaño de la fuente */
-    }
-
-    .menu li {
-        font-size: 16px; /* Ajusta el tamaño de la fuente del menú */
-    }
-}
-
-
-
-/* Media Queries para Responsividad */
-@media (max-width: 1200px) {
-    .container, .container-2 {
-        padding: 0 50px;
+/* ===== MENÚ HAMBURGUESA ===== */
+@media screen and (max-width: 992px) {
+    .menu-toggle {
+        display: block;
     }
     
-    .image-section, .image-section-2 {
-        margin-left: 30px;
-        margin-right: 30px;
+    .main-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background: #053aaa;
+        padding: 80px 20px 20px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        /* Nuevo: contenedor flexible para la imagen */
+        display: flex;
+        flex-direction: column;
     }
     
-    .text-section, .text-section-2 {
-        margin-left: 30px;
-        margin-right: 30px;
+    .main-menu.open {
+        display: flex; /* Cambiado de block a flex */
+        transform: translateX(0);
     }
-}
+    
+    .main-menu > li {
+        padding: 10px 0;
+        border-right: none;
+        border-bottom: 10px solid rgba(130, 126, 126, 0.182);
+        width: 100%;
+    }
+    
+    .main-menu a {
+        color: rgb(252, 252, 252);
+    }
+    
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0.1);
+    }
+    
+    /* Nuevo: Estilos para la imagen en el menú */
+    .menu-image-container { /* Empuja la imagen hacia abajo */
+        padding: 170px 0;
+        text-align: center;
+        margin-top: -100px;
+    }
+    
+    .menu-image {
+        width: 800%;
+        max-width: 200px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .btn-iniciar-sesion {
+        position: static;
+        margin: 250px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 
-@media (max-width: 992px) {
-    .navbar {
-        padding-top: 100px;
+    .login-section {
+        padding: 15px 10px;
+    }
+    
+    .btn-iniciar-sesion {
+        margin: 15px auto;
+        padding: 10px 20px;
     }
     
     .logo img {
         width: 250px;
         top: 50px;
     }
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+@media (max-width: 1200px) {
+    .container, .container-2 {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding-top: 80px;
+    }
     
     .container, .container-2 {
         flex-direction: column;
-        align-items: center;
     }
     
-    .image-section, .image-section-2 {
-        flex: 1;
+    .image-section, 
+    .image-section-2,
+    .text-section,
+    .text-section-2 {
         margin: 20px 0;
-        order: 1;
-    }
-    
-    .text-section, .text-section-2 {
-        flex: 1;
-        margin: 20px 0;
-        order: 2;
         max-width: 100%;
-    }
-    
-    .header {
-        padding-top: 30px;
-        padding-bottom: 30px;
     }
     
     .header-title {
         font-size: 1.8em;
     }
+    
+    .image-section img, 
+    .image-section-2 img {
+        border-radius: 20px;
+    }
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding-top: 80px;
-    }
-    
-    .logo img {
-        width: 200px;
-        top: 40px;
-    }
-    
-    .menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .menu li {
-        padding: 10px 0;
-        border-right: none;
-        border-bottom: 1px solid #000000;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .menu li .sub-menu_conocenos {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-    }
-    
-    .btn-iniciar-sesion {
-        position: static;
-        margin: 10px auto;
-        display: block;
-        width: fit-content;
-    }
-    
-    .text-section, .text-section-2 {
-        padding: 15px;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
     
     .text-section h1, 
     .text-section-2 h1 {
@@ -623,23 +622,25 @@ footer {
     
     .text-section p, 
     .text-section-2 p {
-        font-size: 14px;
-    }
-    
-    .image-section img, 
-    .image-section-2 img {
-        border-radius: 80px;
+        font-size: 15px;
     }
     
     .footer-container {
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
     
-    .footer-logo, 
-    .footer-info, 
-    .footer-socials {
-        margin: 15px 0;
+    .footer-info, .footer-socials {
+        margin: 20px 0;
+    }
+
+    .main-title {
+        font-size: 1.8em;
+    }
+    
+    .subtitle {
+        font-size: 0.9em;
     }
 }
 
@@ -657,51 +658,34 @@ footer {
         font-size: 24px;
     }
     
-    .image-section img, 
-    .image-section-2 img {
-        border-radius: 60px;
-    }
-    
     .footer-logo img {
-        max-width: 250px;
+        max-width: 200px;
     }
     
-    .main-title {
-        font-size: 1.8em;
-    }
-    
-    .subtitle {
-        font-size: 0.9em;
+    .menu-image {
+        width: 70%;
     }
 }
 
-/* Ajustes específicos para el contenido de historia */
+/* ===== BIOGRAFÍA ===== */
 @media (max-width: 768px) {
     .header-encabezado-info {
-        padding: 30px;
-    }
-    
-    .main-title {
-        font-size: 1.8em;
-    }
-    
-    .subtitle {
-        font-size: 0.9em;
-        padding: 0 10px;
+        padding: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .header-encabezado-info {
-        padding: 20px;
-    }
-    
     .main-title {
         font-size: 1.5em;
     }
     
     .subtitle {
         font-size: 0.8em;
+    }
+    
+    .menu-toggle {
+        top: 15px;
+        left: 15px;
     }
 }
 

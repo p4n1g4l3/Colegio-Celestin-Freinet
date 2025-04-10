@@ -723,16 +723,17 @@ footer {
 
 /* Botón de menú hamburguesa */
 .menu-toggle {
-    display: none;
+    display: none; /* Oculto en desktop */
     background: none;
     border: none;
-    color: white;
     font-size: 24px;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1001;
+    z-index: 1100;
+    color: #000000;
+    padding: 10px;
 }
 
 /* Estilos Responsivos */
@@ -746,31 +747,33 @@ footer {
         position: fixed;
         top: 0;
         left: 0;
-        width: 250px;
-        height: 100%;
-        background-color: #dad9d9fa;
-        flex-direction: column;
+        width: 280px;
+        height: 100vh;
+        background: #053aaa;
         padding: 80px 20px 20px;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
         z-index: 1000;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
+        /* Nuevo: contenedor flexible para la imagen */
+        display: flex;
+        flex-direction: column;
     }
     
     .main-menu.open {
-        display: flex;
+        display: flex; /* Cambiado de block a flex */
         transform: translateX(0);
     }
     
     .main-menu > li {
         padding: 10px 0;
         border-right: none;
-        border-bottom: 10px solid rgba(255,255,255,0.1);
+        border-bottom: 10px solid rgba(130, 126, 126, 0.182);
         width: 100%;
     }
     
     .main-menu a {
-        color: rgb(0, 0, 0);
+        color: rgb(252, 252, 252);
     }
     
     .submenu {
@@ -780,12 +783,36 @@ footer {
         background-color: rgba(0,0,0,0.1);
     }
     
+    /* Nuevo: Estilos para la imagen en el menú */
+    .menu-image-container { /* Empuja la imagen hacia abajo */
+        padding: 170px 0;
+        text-align: center;
+        margin-top: -100px;
+    }
+    
+    .menu-image {
+        width: 800%;
+        max-width: 200px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
     .btn-iniciar-sesion {
         position: static;
         margin: 250px 0;
         display: block;
         width: 100%;
         text-align: center;
+    }
+
+    .login-section {
+        padding: 15px 10px;
+    }
+    
+    .btn-iniciar-sesion {
+        margin: 15px auto;
+        padding: 10px 20px;
     }
     
     .logo img {
@@ -828,6 +855,7 @@ footer {
         flex-direction: column;
         gap: 30px;
     }
+    
 }
 
 @media screen and (max-width: 768px) {
