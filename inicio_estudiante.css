@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+* {
+    transition: all 0.3s ease-in-out;
+  }
 
 /* Encabezado */
 .header {
@@ -522,4 +525,19 @@ section {
   td:first-child {
     font-weight: bold;
     background-color: #ecf0f1;
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+  
+    .card {
+      margin: 10px;
+    }
   }
