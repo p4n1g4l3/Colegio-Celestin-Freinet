@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Docentes</title>
-    <link rel="stylesheet" href="docentes.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
- 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Docentes</title>
+  <link rel="stylesheet" href="docentes.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-    <body>
+  <!-- BARRA LATERAL -->
+  <div class="sidebar">
+    <h2>DOCENTES</h2>
+    <ul class="sidebar-menu">
+      <li class="dropdown-item">
+        <a href="#"><i class="fas fa-users"></i> Cursos</a>
+        <ul class="sub-menu-cursos">
+          <li><a href="#" id="showCalificaciones"><i class="fas fa-book"></i> Calificaciones</a></li>
+          <li><a href="#"><i class="fas fa-bullhorn"></i> Circulares</a></li>
+        </ul>
+        <li><a href="#"><i class="fas fa-book"></i> Horarios</a></li>    
+        <li><a href="#"><i class="fas fa-clipboard"></i> Planillas</a></li>
+        <li><a href="#" id="showBoletin"><i class="fas fa-clipboard"></i> Boletines</a></li>
+        <li><a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+    </ul>
+    
+    <div class="logo">
+      <img src="./img/logoactualizado.png" alt="Logo" />
+    </div>
+  </div>
 
-        <!-- BARRA LATERAL -->
-        <div class="sidebar">
-          <h2>DOCENTES</h2>
-          <ul>
-              <li>
-                  <a href="#"><i class="fas fa-users"></i> Cursos</a>
-                  <ul class="sub-menu_cursos">
-                    <li><a href="#" id="showCalificaciones"><i class="fas fa-book"></i> Calificaciones</a></li>
-                      <li><a href="#"><i class="fas fa-bullhorn"></i> Circulares</a></li>
-                  </ul>
-              </li>
-              <li><a href="Horarios.html"><i class="fas fa-book"></i> Horarios</a></li>
-              <li><a href="#"><i class="fas fa-clipboard"></i> Planillas</a></li>
-              <li><a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
-              <div class="logo">
-                  <img src="./img/logoactualizado.png" alt="Logo" />
-              </div>
-          </ul>
-        </div>
-      
-        <!-- ENCABEZADO -->
-        <header>
-          <h1>Bienvenido al Panel de Docentes</h1>
-          <p>Administra la información de los estudiantes y cursos</p>
-        </header>
-      
-        <!-- CONTENIDO PRINCIPAL -->
-        <div class="main-content">
-      
-          <!-- SECCIÓN DE CURSOS -->
-          <section class="users">
-            <h2>Listado de cursos </h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Curso</th>
-                  <th>Docente</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Preescolar</td>
-                  <td>Nikol Diaz</td>
-                  <td class="dropdown-container">
-                    <button class="view dropdown-btn">Ver</button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Datos del estudiante</a></li>
-                      <li><a href="#">Boletin</a></li>
-                      <li><a href="#">Estado</a></li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>Bienvenido al Panel de Docentes</h1>
+    <p>Administra la información de los estudiantes y cursos</p>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-content">
+
+    <!-- SECCIÓN DE CURSOS -->
+    <section class="users">
+      <h2>Listado de cursos </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Curso</th>
+            <th>Docente</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Preescolar</td>
+            <td>Nikol Diaz</td>
+            
+
+            <td class="dropdown-container">
+              <button class="view dropdown-btn">Ver</button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Datos del estudiante</a></li>
+                <li><a href="#">Boletin</a></li>
+                <li><a href="#">Estado</a></li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
       
           <!-- SECCIÓN DE CALIFICACIONES -->
           <section class="calificaciones-section" style="display: none;">
@@ -102,7 +105,70 @@
           </section>
       
         </div>
+
+
+                  <!-- SECCIÓN DE BOLETÍN -->
+          <section class="boletin-section" style="display: none;">
+            <div class="boletin-container">
+              <h1>Consultar El Boletín de Calificaciones</h1>
+              <h2>Seleccionar el período</h2>
+
+              <form class="boletin-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Estudiante:</label>
+                    <input type="text" value="QUICASAQUE DIAZ SARA MICHELLE" readonly />
+                  </div>
+                  <div class="form-group">
+                    <label>Código:</label>
+                    <input type="text" value="20210553" readonly />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Sede:</label>
+                    <input type="text" value="PRINCIPAL" readonly />
+                  </div>
+                  <div class="form-group">
+                    <label>Jornada:</label>
+                    <input type="text" value="Única" readonly />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Grado:</label>
+                    <input type="text" value="Noveno" readonly />
+                  </div>
+                  <div class="form-group">
+                    <label>Curso:</label>
+                    <input type="text" value="04" readonly />
+                  </div>
+                </div>
+
+                <div class="periodo-selector">
+                  <label>Período:</label>
+                  <div class="radios">
+                    <label><input type="radio" name="periodo" /> Primero</label>
+                    <label><input type="radio" name="periodo" /> Segundo</label>
+                    <label><input type="radio" name="periodo" /> Tercero</label>
+                    <label><input type="radio" name="periodo" /> Cuarto</label>
+                    <label><input type="radio" name="periodo" /> Final</label>
+                  </div>
+                </div>
+
+                <div class="boton-imprimir">
+                  <button type="button"><i class="fas fa-print"></i> Visualizar Boletín De Calificaciones</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
       
+
+
+
         <script src="docentes.js"></script>
         <script src="calificaciones.js"></script>
       </body>

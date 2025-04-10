@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
       else if (i < 16) procedimental += value;
       else actitudinal += value;
 
-      // aplicar clase si es < 3.0
       if (value < 3.0) {
         cell.classList.add("low");
       } else {
@@ -83,6 +82,28 @@ document.addEventListener("DOMContentLoaded", function () {
     updateDefinitiva(newRow);
   });
 
+  
+  document.querySelectorAll('.dropdown-btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.stopPropagation(); // Evita que el clic se propague al body
+      // Cierra otros menús abiertos
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        if (menu !== this.nextElementSibling) menu.classList.remove('show');
+      });
+      // Abre el menú correspondiente
+      this.nextElementSibling.classList.toggle('show');
+    });
+  });
+
+  // Cierra el menú si haces clic fuera
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+
+
+
   // Inicializar estudiantes
   agregarEstudiantes();
 
@@ -96,4 +117,34 @@ document.addEventListener("DOMContentLoaded", function () {
     cursosSection.style.display = "none";
     calificacionesSection.style.display = "block";
   });
+
+  // FUNCIONALIDAD DEL MENÚ DESPLEGABLE
+  const dropdownItem = document.querySelector(".dropdown-item > a");
+  const subMenu = document.querySelector(".sub-menu-cursos");
+
+  dropdownItem.addEventListener("click", function (e) {
+    e.preventDefault();
+    subMenu.classList.toggle("active");
+  });
+
+  // FORMATO PARA VER O DESCARGAR EL BOLETIN
+  document.getElementById("showBoletin").addEventListener("click", function () {
+    document.querySelector(".calificaciones-section").style.display = "none";
+    document.querySelector(".boletin-section").style.display = "block";
+  });
+
+  document.getElementById("showBoletin").addEventListener("click", function () {
+    ocultarSecciones(); // Oculta todas
+    document.querySelector(".boletin-section").style.display = "block"; // Muestra solo esta
+  });
+  
+  
+  function ocultarSecciones() {
+    document.querySelector(".calificaciones-section").style.display = "none";
+    document.querySelector(".boletin-section").style.display = "none";
+    // Aquí puedes ocultar más secciones si tienes otras
+  }
+  
+
+
 });
