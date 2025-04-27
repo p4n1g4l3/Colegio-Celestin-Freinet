@@ -17,8 +17,9 @@
     </header>
 
     <header>
+        <button class="menu-toggle">☰</button>
         <div class="menu-container">
-            <ul class="main-menu">
+            <ul class="main-menu" id="mainMenu">
                 <li><a href="home.html">Inicio</a></li>
                 
                 <li class="has-submenu">
@@ -31,12 +32,17 @@
                 </li>
                 
                 <li><a href="actividades.html">Actividades</a></li>
-                <li><a href="PreMatricula.html">Pre-Matricula</a></li>
-                <li><a href="contactenos.html">Contactenos</a></li><br>
+                <li id="menuPrematricula" style="display: none;"><a href="PreMatricula.html">Pre-Matricula</a></li>
+                <li><a href="contactenos.html">Contactenos</a></li>
+                
+                <!-- Botón de inicio de sesión en versión móvil -->
+                <li class="mobile-login-btn" style="display: none;">
+                    <a href="inicio_sesion.html" class="btn-iniciar-sesion">Iniciar Sesión</a>
+                </li>
             </ul>
 
-                    <!-- Botón de inicio de sesión alineado a la derecha -->
-        <a href="inicio_sesion.html" class="btn-iniciar-sesion">Iniciar Sesión</a>
+            <!-- Botón de inicio de sesión en versión desktop -->
+            <a href="inicio_sesion.html" class="btn-iniciar-sesion desktop-login-btn">Iniciar Sesión</a>
         </div>
     </header>
 

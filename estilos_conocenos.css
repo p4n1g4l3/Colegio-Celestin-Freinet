@@ -494,7 +494,6 @@ footer {
     padding: 10px;
 }
 
-/* ===== MENÚ HAMBURGUESA ===== */
 @media screen and (max-width: 992px) {
     .menu-toggle {
         display: block;

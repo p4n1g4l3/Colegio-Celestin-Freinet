@@ -5,8 +5,6 @@ body {
     background-color: #dad9d9;
 }
 
-
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -483,7 +481,107 @@ footer {
     text-decoration: underline;
 }
 
-/* Media Queries para Responsividad */
+
+/* Botón de menú hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto en desktop */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    color: #000000;
+    padding: 10px;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background: #053aaa;
+        padding: 80px 20px 20px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        /* Nuevo: contenedor flexible para la imagen */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-menu.open {
+        display: flex; /* Cambiado de block a flex */
+        transform: translateX(0);
+    }
+    
+    .main-menu > li {
+        padding: 10px 0;
+        border-right: none;
+        border-bottom: 10px solid rgba(130, 126, 126, 0.182);
+        width: 100%;
+    }
+    
+    .main-menu a {
+        color: rgb(252, 252, 252);
+    }
+    
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0.1);
+    }
+    
+    /* Nuevo: Estilos para la imagen en el menú */
+    .menu-image-container { /* Empuja la imagen hacia abajo */
+        padding: 170px 0;
+        text-align: center;
+        margin-top: -100px;
+    }
+    
+    .menu-image {
+        width: 800%;
+        max-width: 200px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .btn-iniciar-sesion {
+        position: static;
+        margin: 250px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .login-section {
+        padding: 15px 10px;
+    }
+    
+    .btn-iniciar-sesion {
+        margin: 15px auto;
+        padding: 10px 20px;
+    }
+    
+    .logo img {
+        width: 250px;
+        top: 50px;
+    }
+}
+
 @media (max-width: 1200px) {
     .column, .column-2, .column-3 {
         width: 28%; /* Reducimos un poco el ancho para pantallas medianas */
@@ -522,26 +620,10 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding-top: 80px;
-    }
-    
-    .logo img {
-        width: 200px;
-        top: 40px;
-    }
     
     .menu ul {
         flex-direction: column;
         align-items: center;
-    }
-    
-    .menu li {
-        padding: 10px 0;
-        border-right: none;
-        border-bottom: 1px solid #000000;
-        width: 100%;
-        text-align: center;
     }
     
     .menu li .sub-menu_conocenos {
@@ -550,12 +632,6 @@ footer {
         box-shadow: none;
     }
     
-    .btn-iniciar-sesion {
-        position: static;
-        margin: 10px auto;
-        display: block;
-        width: fit-content;
-    }
     
     .column, .column-2, .column-3 {
         width: 80%; /* Una columna en móviles */

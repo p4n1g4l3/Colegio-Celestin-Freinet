@@ -759,6 +759,10 @@ footer {
         display: flex;
         flex-direction: column;
     }
+
+    :root {
+        --mi-imagen: url('img/logoactualizado.png');
+    }
     
     .main-menu.open {
         display: flex; /* Cambiado de block a flex */

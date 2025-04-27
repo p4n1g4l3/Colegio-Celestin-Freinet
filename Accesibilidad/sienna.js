@@ -158,16 +158,39 @@ document.addEventListener("DOMContentLoaded", function() {
         let s = "", a = ["-o-", "-ms-", "-moz-", "-webkit", ""];
         for (var n = a.length; n--;) s += a[n] + (e || "filter") + ":" + t + ";";
         return s
-    }, p = function(t) {
+    },     p = function(t) {
         let e = "";
         if (t) {
             let a = "";
-            "dark-contrast" == t ? a = "color: #fff !important;fill: #FFF !important;background-color: #000 !important;" : "light-contrast" == t ? a = " color: #000 !important;fill: #000 !important;background-color: #FFF !important;" : "high-contrast" == t ? a += d("contrast(125%)") : "high-saturation" == t ? a += d("saturate(200%)") : "low-saturation" == t ? a += d("saturate(50%)") : "monochrome" == t && (a += d("grayscale(100%)"));
-            let n = [""];
-            "dark-contrast" != t && "light-contrast" != t || (n = ["h1", "h2", "h3", "h4", "h5", "h6", "img", "p", "i", "svg", "a", "button", "label", "li", "ol"]);
-            for (var s = n.length; s--;) e += '[data-asw-filter="' + t + '"] ' + n[s] + "{" + a + "}"
+            if ("dark-contrast" == t) {
+                a = "color: #fff !important;fill: #FFF !important;background-color: #000 !important;";
+                // Aplicar a todos los elementos
+                e += `[data-asw-filter="${t}"] * {${a}}`;
+                // Estilos específicos para elementos comunes
+                e += `[data-asw-filter="${t}"] body {background-color: #000 !important;}`;
+                e += `[data-asw-filter="${t}"] input, [data-asw-filter="${t}"] textarea, [data-asw-filter="${t}"] select {background-color: #222 !important; color: #fff !important; border-color: #444 !important;}`;
+            } else if ("light-contrast" == t) {
+                a = "color: #000 !important;fill: #000 !important;background-color: #FFF !important;";
+                // Aplicar a todos los elementos
+                e += `[data-asw-filter="${t}"] * {${a}}`;
+                e += `[data-asw-filter="${t}"] body {background-color: #fff !important;}`;
+            } else if ("high-contrast" == t) {
+                a += d("contrast(125%)");
+            } else if ("high-saturation" == t) {
+                a += d("saturate(200%)");
+            } else if ("low-saturation" == t) {
+                a += d("saturate(50%)");
+            } else if ("monochrome" == t) {
+                a += d("grayscale(100%)");
+            }
+            
+            let n = ["", "div", "section", "article", "main", "header", "footer", "nav", "aside", "h1", "h2", "h3", "h4", "h5", "h6", "img", "p", "i", "svg", "a", "button", "label", "li", "ol", "ul", "table", "tr", "td", "th", "form", "input", "textarea", "select"];
+            
+            for (var s = n.length; s--;) {
+                e += '[data-asw-filter="' + t + '"] ' + n[s] + "{" + a + "}";
+            }
         }
-        c(e, "asw-filter-style"), t ? document.documentElement.setAttribute("data-asw-filter", t) : document.documentElement.removeAttribute("data-asw-filter", t)
+        c(e, "asw-filter-style"), t ? document.documentElement.setAttribute("data-asw-filter", t) : document.documentElement.removeAttribute("data-asw-filter", t);
     }, u = function() {
         let e = [{
             id: "highlight-title",
@@ -240,3 +263,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }, !1)
     }), document.body.appendChild(r), s && (u(), 1 !== t.states.fontSize && h(null, t.states.fontSize), t.states.contrast && p(t.states.contrast))
 });
+
+

@@ -15,3 +15,52 @@
     background: #023092 !important;
     color: #fff;
 }
+
+/* Estilos adicionales para modo oscuro */
+[data-asw-filter="dark-contrast"] {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+[data-asw-filter="dark-contrast"] body {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+[data-asw-filter="dark-contrast"] * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
+
+[data-asw-filter="dark-contrast"] .asw-menu {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+
+[data-asw-filter="dark-contrast"] .asw-btn {
+    background-color: #333 !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
+
+[data-asw-filter="dark-contrast"] .asw-btn.asw-selected {
+    background-color: #023092 !important;
+    color: #fff !important;
+}
+
+[data-asw-filter="light-contrast"] {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+[data-asw-filter="light-contrast"] body {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+[data-asw-filter="light-contrast"] * {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #ddd !important;
+}

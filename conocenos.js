@@ -23,6 +23,8 @@ document.addEventListener('click', function() {
     });
 });
 
+//----responsivo----
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainMenu = document.getElementById('mainMenu');
