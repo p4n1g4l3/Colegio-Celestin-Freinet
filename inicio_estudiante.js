@@ -122,7 +122,7 @@ function cerrarSesion() {
 }
 
 const datosMaterias = {
-    investigacion: {
+    lengua_castellana: {
       actividades: ["Investigación", "Quiz", "Exposición"],
       notas: ["4.5", "3.8", "5.0"],
       observaciones: ["Muy bien", "Puede mejorar", "Excelente"]
@@ -136,6 +136,36 @@ const datosMaterias = {
       actividades: ["Listening", "Speaking", "Grammar"],
       notas: ["4.8", "4.5", "4.6"],
       observaciones: ["Excelente", "Muy buena", "Correcta"]
+    },
+    Ciencias_Naturales: {
+      actividades: ["Experimento", "Informe", "Examen"],
+      notas: ["3.0", "4.0", "3.5"],
+      observaciones: ["Necesita mejorar", "Bien", "Regular"]
+    },
+    Ciencias_Sociales: {
+      actividades: ["Lectura", "Debate", "Proyecto"],
+      notas: ["4.2", "3.8", "4.0"],
+      observaciones: ["Buena", "Puede mejorar", "Bien"]
+    },
+    Educación_Artística: {
+      actividades: ["Dibujo", "Pintura", "Escultura"],
+      notas: ["3.8", "4.0", "4.2"],
+      observaciones: ["Regular", "Bien", "Excelente"]
+    },
+    Religión_o_Ética_y_Valores_Humanos: {
+      actividades: ["valores", "religion", "ética"],
+      notas: ["4.5", "4.0", "3.8"],
+      observaciones: ["Muy bien", "Bien", "Regular"]
+    },
+    Educación_Física: {
+      actividades: ["Fútbol", "Baloncesto", "Tenis"],
+      notas: ["4.0", "3.8", "4.2"],
+      observaciones: ["Regular", "Bien", "Excelente"]
+    },
+    Tecnología_e_Informática: {
+      actividades: ["Programación", "Redes", "Base de Datos"],
+      notas: ["4.0", "3.8", "4.2"], 
+      observaciones: ["Regular", "Bien", "Excelente"]
     }
   };
 
