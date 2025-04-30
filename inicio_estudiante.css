@@ -1,14 +1,12 @@
-/* Reset básico */
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
 }
-* {
-    transition: all 0.3s ease-in-out;
-  }
-
 /* Encabezado */
 .header {
     background: #0c3897;
@@ -559,4 +557,40 @@ section {
 .boton-prematricula:hover {
     background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
 
+}
+  tablee, th, td {
+    border: 1px solid black;
+    font-size: 0.8rem;
+    text-align: center;
+    background: #053aaa;
+    color: white;
+  }
+  .header-tablee th, .header-tablee td {
+    text-align: left;
+    border: none;
+    background: #053aaa;
+    color: white;
+  }
+  .profile-pic {
+    width: 90px;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid #000;
+  }
+  .boton-imprimir {
+    background-color: #053aaa; /* Azul */
+    color: white; /* Texto en blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a una mano */
+    display: block; /* Lo convierte en un bloque para manipular su posición */
+    margin: 20px auto; /* Centrado horizontalmente */
+    text-align: left; /* Asegura que el texto esté centrado */
+    transition: 0.3s ease-in-out; /* Animación al pasar el mouse */
+}
+.boton-imprimir:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
 }
