@@ -541,3 +541,22 @@ section {
       margin: 10px;
     }
   }
+  .boton-prematricula {
+    background-color: #053aaa; /* Azul */
+    color: white; /* Texto en blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a una mano */
+    display: block; /* Lo convierte en un bloque para manipular su posición */
+    margin: 20px auto; /* Centrado horizontalmente */
+    text-align: left; /* Asegura que el texto esté centrado */
+    transition: 0.3s ease-in-out; /* Animación al pasar el mouse */
+}
+
+.boton-prematricula:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+
+}
