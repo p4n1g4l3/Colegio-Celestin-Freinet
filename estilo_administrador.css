@@ -12,16 +12,20 @@ body {
 /* Encabezado */
 .header {
     background: #0c3897;
+    position: fixed;
     color: white;
-    padding: 15px 20px;
+    padding: 18px;
+    left: 0px;
+    right: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+.header h1{
+    margin-left: 500px;
+}
+
 
 /* Botón de cerrar sesión */
 .logout-btn {
@@ -59,14 +63,13 @@ body {
 /* Sidebar/Menú lateral */
 .sidebar {
     width: 250px;
-    background-color: #053aaa;
+    left: 0px;
+    background-color: #0c3897;
     color: white;
     padding: 20px;
     position:fixed;
-    top: 60px;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-    transition: transform 0.3s ease;
+    top: 0px;
+    height: calc(103vh );
 }
 
 .sidebar h2 {
@@ -85,6 +88,7 @@ body {
 
 .sidebar ul li {
     margin-bottom: 10px;
+    padding: 6px;
 }
 
 .sidebar ul li a {
@@ -821,5 +825,141 @@ input:checked + .slider:before {
     }
 }
 
+/* Estilos para la sección de aplicantes */
+.tabla-aplicantes-container {
+    margin: 20px 0;
+    overflow-x: auto;
+}
 
+.tabla-aplicantes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tabla-aplicantes th, .tabla-aplicantes td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-aplicantes th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tabla-aplicantes tr:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-ver {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-pequeno {
+    max-width: 500px;
+}
+
+.cerrar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover {
+    color: black;
+}
+
+/* Estilos para los detalles */
+.detalles-container {
+    margin: 20px 0;
+}
+
+.detalle-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Botones de acción */
+.acciones-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-aceptar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-rechazar {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-confirmar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botones-confirmacion {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
 

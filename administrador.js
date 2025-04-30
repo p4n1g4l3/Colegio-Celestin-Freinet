@@ -59,14 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 3, nombre: "Literatura", docente: "No asignado", estudiantes: [102, 103, 105] }
     ];
 
-    const estudiantes = [
-        { id: 101, nombre: "Carlos Sánchez", documento: "1001234567" },
-        { id: 102, nombre: "Ana Rodríguez", documento: "1002345678" },
-        { id: 103, nombre: "Luis Martínez", documento: "1003456789" },
-        { id: 104, nombre: "Sofía García", documento: "1004567890" },
-        { id: 105, nombre: "Pedro López", documento: "1005678901" }
-    ];
-
     const docentes = [
         { id: 201, nombre: "Juan Pérez", especialidad: "Matemáticas" },
         { id: 202, nombre: "María Gómez", especialidad: "Ciencias" },

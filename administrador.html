@@ -20,11 +20,14 @@
     <div class="container">
         <!-- Menú lateral -->
         <nav class="sidebar">
+            <h2>Administración</h2>
             <ul><br><br>
                 <li><a href="#novedades">Novedades</a></li>
                 <li><a href="#usuarios">Usuarios</a></li>
-                <li><a href="#estado">Estado</a></li>
-                <li><a href="#configuracion">Configuración</a></li>
+                <li><a href="#configuracion">Configuración del sitio web</a></li>
+                <li><a href="#estudiantes">estudiantes</a></li>
+                <li><a href="#profesores">profesores</a></li>
+                <li><a href="#asignaturas">asignaturas</a></li>
                 <li><a href="#circulares">Postulados</a></li>
                 <li><a href="#galeria">Cursos</a></li>
                 <div class="logo">
@@ -87,9 +90,6 @@
             <section id="usuarios">
                 <h2>Listado de Usuarios</h2>
                 <div class="form-nuevo-usuario">
-                    <button class="btn-agregar-usuario" onclick="agregarUsuario()">
-                        <span class="icono">➕</span> Agregar Usuario
-                    </button>
                 </div>
                 <table>
                     <thead>
@@ -137,24 +137,67 @@
                 </div>
             </section>
 
-            <section id="estado">
-                <h2>Estado de Usuarios</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Num</th>
-                            <th>Nombre</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Juan Pérez</td>
-                            <td>Habilitado</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <section id="estudiantes" class="section-estudiantes">
+                <h2>estudiantes</h2>
+                <!-- Tabla de estudiantes -->
+                </div>
+                <p class="">aca va la tabla de los estudiantes.</p>
+            </div>
+        </section>
+
+            <section id="profesores" class="section-profesores">
+                <h2>profesores</h2>
+                <!-- Tabla de profesores -->
+                </div>
+                <p class="">aca va la tabla de los profesores .</p>
+            </div>
+        </section>
+
+            <section id="asignaturas" class="section-asignaturas">
+                <h2>asignaturas</h2>
+                <!-- Tabla de asignaturas -->
+                <div class="cursos-container">
+                    <table class="tabla-cursos">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de la asignatura</th>
+                                <th>Docente Asignado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-cursos">
+                            <!-- Se llenará dinámicamente -->
+                            
+                        </tbody>
+                    </table>
+                    <button id="asignar-docente-btn" class="btn-asignar">Asignar Docente</button>
+                </div>
+
+                <!-- Modal para asignar docente -->
+                <div id="modal-docente" class="modal" style="display: none;">
+                    <div class="modal-contenido">
+                        <span class="cerrar-modal">&times;</span>
+                        <h3>Asignar Docente al Curso: <span id="nombre-curso-modal"></span></h3>
+                        <div class="busqueda-docente">
+                            <input type="text" id="buscar-docente" placeholder="Buscar docente...">
+                        </div>
+                        <table class="tabla-docentes">
+                            <thead>
+                                <tr>
+                                    <th>Seleccionar</th>
+                                    <th>Nombre</th>
+                                    <th>Especialidad</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lista-docentes">
+                                <!-- Se llenará dinámicamente -->
+                            </tbody>
+                        </table>
+                        <button id="confirmar-docente" class="btn-confirmar">Confirmar Asignación</button>
+                    </div>
+                </div>
             </section>
 
             <section id="circulares">
@@ -172,7 +215,7 @@
                             </tr><br><br>
                         </thead>
                         <tbody id="lista-aplicantes">
-                            <!-- Ejemplo de fila (se llenará dinámicamente) -->
+                            <!-- se llenará dinámicamente -->
                             <tr>
                                 <td>1</td>
                                 <td>María González</td>
@@ -254,63 +297,9 @@
                 <h2>Gestión de Cursos</h2>
                 
                 <!-- Tabla de cursos -->
-                <div class="cursos-container">
-                    <table class="tabla-cursos">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre del Curso</th>
-                                <th>Docente Asignado</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="lista-cursos">
-                            <!-- Se llenará dinámicamente -->
-                        </tbody>
-                    </table>
                 </div>
-
-                <!-- Contenedor para estudiantes del curso seleccionado -->
-                <div id="estudiantes-curso" class="estudiantes-container" style="display: none;">
-                    <h3>Estudiantes del Curso: <span id="nombre-curso-seleccionado"></span></h3>
-                    <table class="tabla-estudiantes">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Documento</th>
-                            </tr>
-                        </thead>
-                        <tbody id="lista-estudiantes">
-                            <!-- Se llenará dinámicamente -->
-                        </tbody>
-                    </table>
-                    <button id="asignar-docente-btn" class="btn-asignar">Asignar Docente</button>
-                </div>
-
-                <!-- Modal para asignar docente -->
-                <div id="modal-docente" class="modal" style="display: none;">
-                    <div class="modal-contenido">
-                        <span class="cerrar-modal">&times;</span>
-                        <h3>Asignar Docente al Curso: <span id="nombre-curso-modal"></span></h3>
-                        <div class="busqueda-docente">
-                            <input type="text" id="buscar-docente" placeholder="Buscar docente...">
-                        </div>
-                        <table class="tabla-docentes">
-                            <thead>
-                                <tr>
-                                    <th>Seleccionar</th>
-                                    <th>Nombre</th>
-                                    <th>Especialidad</th>
-                                </tr>
-                            </thead>
-                            <tbody id="lista-docentes">
-                                <!-- Se llenará dinámicamente -->
-                            </tbody>
-                        </table>
-                        <button id="confirmar-docente" class="btn-confirmar">Confirmar Asignación</button>
-                    </div>
-                </div>
+                <p class="">aca va la tabla de los cursos (primero, segundo, tercero, hasta quinto) .</p>
+            </div>
             </section>
         </main>
     </div>
@@ -320,145 +309,6 @@
     <script src="adm_usuarios.js"></script>
     <script src="aplicante.js"></script>
 
-    <style>
-        /* Estilos para la sección de aplicantes */
-.tabla-aplicantes-container {
-    margin: 20px 0;
-    overflow-x: auto;
-}
-
-.tabla-aplicantes {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-.tabla-aplicantes th, .tabla-aplicantes td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-.tabla-aplicantes th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.tabla-aplicantes tr:hover {
-    background-color: #f5f5f5;
-}
-
-.btn-ver {
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Estilos para el modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal-contenido {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 700px;
-    border-radius: 8px;
-    position: relative;
-}
-
-.modal-pequeno {
-    max-width: 500px;
-}
-
-.cerrar-modal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.cerrar-modal:hover {
-    color: black;
-}
-
-/* Estilos para los detalles */
-.detalles-container {
-    margin: 20px 0;
-}
-
-.detalle-item {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-left: 4px solid #4CAF50;
-}
-
-/* Botones de acción */
-.acciones-modal {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-aceptar {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn-rechazar {
-    background-color: #f44336;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn-confirmar {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn-cancelar {
-    background-color: #f44336;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.botones-confirmacion {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-}
-    </style>
 
 </body>
 </html>
