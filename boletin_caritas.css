@@ -1,0 +1,66 @@
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 40px;
+    background-color: #fff;
+  }
+  
+  .contenedor {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .tabla-superior, .tabla-dimensiones {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .tabla-superior th, .tabla-superior td,
+  .tabla-dimensiones th, .tabla-dimensiones td {
+    border: 1px solid #000;
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  .tabla-superior th {
+    background-color: #eee;
+  }
+  
+  .frase {
+    text-align: center;
+    font-style: italic;
+    margin: 10px 0 20px;
+  }
+  
+  .dimension {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .dimension span {
+    font-weight: normal;
+    font-size: 13px;
+    display: block;
+    margin-top: 2px;
+  }
+  
+  .observaciones {
+    margin: 20px 0;
+    line-height: 1.5;
+  }
+  
+  .firma {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
