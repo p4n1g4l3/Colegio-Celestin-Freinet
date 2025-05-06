@@ -9,40 +9,52 @@
 </head>
 <body>
 
-  <!-- BARRA LATERAL -->
-  <div class="sidebar">
-    <h2>DOCENTES</h2>
-    <ul class="sidebar-menu">
-      <li class="dropdown-item">
-        <a href="#"><i class="fas fa-users"></i> Cursos</a>
-        <ul class="sub-menu-cursos">
-          <li><a href="#" id="showCalificaciones"><i class="fas fa-book"></i> Calificaciones</a></li>
-          <li><a href="#"><i class="fas fa-bullhorn"></i> Circulares</a></li>
+
+    <!-- BARRA LATERAL -->
+    <div class="sidebar">
+        <h2>DOCENTES</h2>
+        <ul class="sidebar-menu">
+        <li>
+            <a href="#"><i class="fas fa-users"></i> Cursos</a>
+        </li>
+        <li>
+            <a href="#" id="showCalificaciones"><i class="fas fa-book"></i> Calificaciones</a>
+        </li>
+        <li>
+            <a href="#"><i class="fas fa-bullhorn"></i> Circulares</a>
+        </li>
+        <li>
+            <a href="#"><i class="fas fa-book"></i> Horarios</a>
+        </li>
+        <li>
+            <a href="#"><i class="fas fa-clipboard"></i> Planillas</a>
+        </li>
+        <li>
+            <a href="#" id="showBoletin"><i class="fas fa-clipboard"></i> Boletines</a>
+        </li>
+        <li>
+            <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        </li>
         </ul>
-        <li><a href="#"><i class="fas fa-book"></i> Horarios</a></li>    
-        <li><a href="#"><i class="fas fa-clipboard"></i> Planillas</a></li>
-        <li><a href="#" id="showBoletin"><i class="fas fa-clipboard"></i> Boletines</a></li>
-        <li><a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
-    </ul>
-    
-    <div class="logo">
-      <img src="./img/logoactualizado.png" alt="Logo" />
     </div>
-  </div>
+    
 
   <!-- ENCABEZADO -->
-  <header>
-    <h1>Bienvenido al Panel de Docentes</h1>
-    <p>Administra la información de los estudiantes y cursos</p>
-  </header>
+
+    <header class="d-flex justify-content-between align-items-center px-4 py-3 border-bottom">
+      <button id="btnVolver" class="btn btn-outline-secondary" style="display: none;">⬅️ Volver</button>
+      <h1 id="titulo-seccion">Bienvenido al Panel de Docentes</h1>
+      <p>Administra la información de los estudiantes y cursos</p>
+ </header>
+
+
 
   <!-- CONTENIDO PRINCIPAL -->
   <div class="main-content">
-
     <!-- SECCIÓN DE CURSOS -->
-    <section class="users">
-      <h2>Listado de cursos </h2>
-      <table>
+
+    <div id="tabla-cursos" class="tabla-seccion" style="display: block;">
+      <table class="tabla-cursos">
         <thead>
           <tr>
             <th>Curso</th>
@@ -51,124 +63,213 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Preescolar</td>
-            <td>Nikol Diaz</td>
-            
+          <tbody>
+            <!-- Curso: Jardín -->
+            <tr>
+              <td>Jardín</td>
+              <td>Laura Gómez</td>
+              <td>
+                <button class="ver-btn">Ver</button>
+                <div class="submenu">
+                  <button class="submenu-opcion" data-curso="Jardín" data-seccion="Planilla">Planilla</button>
+                  <button class="submenu-opcion" data-curso="Jardín" data-seccion="Calificaciones">Calificaciones</button>
+                  <button class="submenu-opcion" data-curso="Jardín" data-seccion="Observador">Observador</button>
+                </div>
+              </td>
+            </tr>
+          
+            <!-- Curso: Transición -->
+            <tr>
+              <td>Transición</td>
+              <td>Pedro Martínez</td>
+              <td>
+                <button class="ver-btn">Ver</button>
+                <div class="submenu">
+                  <button class="submenu-opcion" data-curso="Transición" data-seccion="Planilla">Planilla</button>
+                  <button class="submenu-opcion" data-curso="Transición" data-seccion="Calificaciones">Calificaciones</button>
+                  <button class="submenu-opcion" data-curso="Transición" data-seccion="Observador">Observador</button>
+                </div>
+              </td>
+            </tr>
+          
+            <!-- Curso: Primero -->
+            <tr>
+              <td>Primero</td>
+              <td>Daniela Ruiz</td>
+              <td>
+                <button class="ver-btn">Ver</button>
+                <div class="submenu">
+                  <button class="submenu-opcion" data-curso="Primero" data-seccion="Planilla">Planilla</button>
+                  <button class="submenu-opcion" data-curso="Primero" data-seccion="Calificaciones">Calificaciones</button>
+                  <button class="submenu-opcion" data-curso="Primero" data-seccion="Observador">Observador</button>
+                </div>
+              </td>
+            </tr>
+          
+            <!-- Curso: Segundo -->
+            <tr>
+              <td>Segundo</td>
+              <td>Carlos Herrera</td>
+              <td>
+                <button class="ver-btn">Ver</button>
+                <div class="submenu">
+                  <button class="submenu-opcion" data-curso="Segundo" data-seccion="Planilla">Planilla</button>
+                  <button class="submenu-opcion" data-curso="Segundo" data-seccion="Calificaciones">Calificaciones</button>
+                  <button class="submenu-opcion" data-curso="Segundo" data-seccion="Observador">Observador</button>
+                </div>
+              </td>
+            </tr>
+          
+            <!-- Curso: Tercero -->
+            <tr>
+              <td>Tercero</td>
+              <td>María Torres</td>
+              <td>
+                <button class="ver-btn">Ver</button>
+                <div class="submenu">
+                  <button class="submenu-opcion" data-curso="Tercero" data-seccion="Planilla">Planilla</button>
+                  <button class="submenu-opcion" data-curso="Tercero" data-seccion="Calificaciones">Calificaciones</button>
+                  <button class="submenu-opcion" data-curso="Tercero" data-seccion="Observador">Observador</button>
+                </div>
+              </td>
+            </tr>
+          
+            <!-- Curso: Cuarto -->
+            <tr>
+              <td>Cuarto</td>
+              <td>Juan López</td>
+              <td>
+                <button class="ver-btn">Ver</button>
+                <div class="submenu">
+                  <button class="submenu-opcion" data-curso="Cuarto" data-seccion="Planilla">Planilla</button>
+                  <button class="submenu-opcion" data-curso="Cuarto" data-seccion="Calificaciones">Calificaciones</button>
+                  <button class="submenu-opcion" data-curso="Cuarto" data-seccion="Observador">Observador</button>
+                </div>
+              </td>
+            </tr>
+          
+            <!-- Curso: Quinto -->
+            <tr>
+              <td>Quinto</td>
+              <td>Sofía Mendoza</td>
+              <td>
+                <button class="ver-btn">Ver</button>
+                <div class="submenu">
+                  <button class="submenu-opcion" data-curso="Quinto" data-seccion="Planilla">Planilla</button>
+                  <button class="submenu-opcion" data-curso="Quinto" data-seccion="Calificaciones">Calificaciones</button>
+                  <button class="submenu-opcion" data-curso="Quinto" data-seccion="Observador">Observador</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </tbody>  
+      </table>  
+      
+    </div>
 
-            <td class="dropdown-container">
-              <button class="view dropdown-btn">Ver</button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Datos del estudiante</a></li>
-                <li><a href="#">Boletin</a></li>
-                <li><a href="#">Estado</a></li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </div>
       
-          <!-- SECCIÓN DE CALIFICACIONES -->
-          <section class="calificaciones-section" style="display: none;">
-            <div class="header">
-              <h2>📘 Planilla de Calificaciones</h2>
-              <p><strong>Sede:</strong> Principal | <strong>Grado:</strong> Noveno | <strong>Área:</strong> Investigación</p>
-              <p><strong>Docente:</strong> Nombre del Docente | <strong>Curso:</strong> 01 | <strong>Periodo:</strong> 1</p>
-            </div>
-      
-            <div class="table-container">
-              <table id="gradeTable">
-                <thead>
+      <!-- SECCIÓN PLANILLA DE ESTUDIANTES  -->
+
+      <section class="planilla-estudiantes" style="display: none;">
+        <button id="btnVolver" class="btn btn-secondary mb-3">⬅️ Volver</button>
+          <h2>Lista de Estudiantes del Curso: <span id="nombreCurso"></span></h2>
+          <table>
+              <thead>
                   <tr>
-                    <th rowspan="2">No.</th>
-                    <th rowspan="2">Código</th>
-                    <th rowspan="2">Apellidos/Nombres</th>
-                    <th colspan="8" class="section-header">📖 Conceptual (35%)</th>
-                    <th colspan="8" class="section-header">📝 Procedimental (35%)</th>
-                    <th colspan="3" class="section-header">🌟 Actitudinal (30%)</th>
-                    <th rowspan="2">🎯 Definitiva</th>
-                    <th rowspan="2">Acciones</th>
-                  </tr>
-                  <tr>
-                    <th>N1</th><th>N2</th><th>N3</th><th>N4</th><th>N5</th><th>N6</th><th>N7</th><th>N8</th>
-                    <th>N1</th><th>N2</th><th>N3</th><th>N4</th><th>N5</th><th>N6</th><th>N7</th><th>N8</th>
-                    <th>N1</th><th>N2</th><th>N3</th>
+                    <th>Nombre del Estudiante</th>
+                    <th>Edad</th>
+                    <th>N. de Identificación</th>
                   </tr>
                 </thead>
-                <tbody id="tableBody"></tbody>
-              </table>
-            </div>
+                
+            <tbody id="tablaEstudiantes">
+              <tr>
+                <td>Juan Pérez</td>
+                <td>7</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>María López</td>
+                <td>6</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <button id="cerrarPlanilla" class="cerrar-btn">Cerrar</button>
+        </section>
+
+
+<!-- Sección de contenido dinámico -->
+<div id="seccion-contenido" class="seccion-contenido" style="display: none;">
+  <h3 id="titulo-seccion"></h3>
+  <div id="contenido-seccion">
+    <!-- Aquí se insertarán dinámicamente las tablas -->
+  </div>
+</div>
+
+
+
+<div id="tabla-calificaciones" class="tabla-seccion" style="display: none;">
+  <button id="btnVolver" class="btn btn-secondary mb-3">⬅️ Volver</button>
+<table class="tabla-notas">
+<section class="calificaciones-section d-none">
+  <div class="container mt-5">
+    <div class="text-center mb-4">
+      <h2>📘 Planilla de Calificaciones</h2>
+      <p><strong>Sede:</strong> Principal | <strong>Grado:</strong> Noveno | <strong>Área:</strong> Investigación</p>
+      <p><strong>Docente:</strong> Nombre del Docente | <strong>Curso:</strong> 01 | <strong>Periodo:</strong> 1</p>
+    </div>
+
+    <div class="table-responsive">
+      <table id="gradeTable" class="table table-bordered table-hover text-center align-middle">
+        <thead class="table-primary">
+          <tr>
+            <th rowspan="2">No.</th>
+            <th rowspan="2">Código</th>
+            <th rowspan="2">Apellidos/Nombres</th>
+            <th colspan="8">📖 Conceptual (35%)</th>
+            <th colspan="8">📝 Procedimental (35%)</th>
+            <th colspan="3">🌟 Actitudinal (30%)</th>
+            <th rowspan="2">🎯 Definitiva</th>
+            <th rowspan="2">Acciones</th>
+          </tr>
+          <tr>
+            <!-- Conceptual -->
+            <th>N1</th><th>N2</th><th>N3</th><th>N4</th><th>N5</th><th>N6</th><th>N7</th><th>N8</th>
+            <!-- Procedimental -->
+            <th>N1</th><th>N2</th><th>N3</th><th>N4</th><th>N5</th><th>N6</th><th>N7</th><th>N8</th>
+            <!-- Actitudinal -->
+            <th>N1</th><th>N2</th><th>N3</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Aquí van las filas dinámicas -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mt-4">
+      <button id="addRowBtn" class="btn btn-primary">
+        ➕ Agregar Estudiante
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
       
-            <button id="addRowBtn">➕ Agregar Estudiante</button>
-          </section>
+
+      <div id="tabla-planilla" class="tabla-seccion" style="display: none;">
+        <!-- Otra tabla -->
+      </div>
       
-        </div>
-
-
-                  <!-- SECCIÓN DE BOLETÍN -->
-          <section class="boletin-section" style="display: none;">
-            <div class="boletin-container">
-              <h1>Consultar El Boletín de Calificaciones</h1>
-              <h2>Seleccionar el período</h2>
-
-              <form class="boletin-form">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label>Estudiante:</label>
-                    <input type="text" value="QUICASAQUE DIAZ SARA MICHELLE" readonly />
-                  </div>
-                  <div class="form-group">
-                    <label>Código:</label>
-                    <input type="text" value="20210553" readonly />
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label>Sede:</label>
-                    <input type="text" value="PRINCIPAL" readonly />
-                  </div>
-                  <div class="form-group">
-                    <label>Jornada:</label>
-                    <input type="text" value="Única" readonly />
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label>Grado:</label>
-                    <input type="text" value="Noveno" readonly />
-                  </div>
-                  <div class="form-group">
-                    <label>Curso:</label>
-                    <input type="text" value="04" readonly />
-                  </div>
-                </div>
-
-                <div class="periodo-selector">
-                  <label>Período:</label>
-                  <div class="radios">
-                    <label><input type="radio" name="periodo" /> Primero</label>
-                    <label><input type="radio" name="periodo" /> Segundo</label>
-                    <label><input type="radio" name="periodo" /> Tercero</label>
-                    <label><input type="radio" name="periodo" /> Cuarto</label>
-                    <label><input type="radio" name="periodo" /> Final</label>
-                  </div>
-                </div>
-
-                <div class="boton-imprimir">
-                  <button type="button"><i class="fas fa-print"></i> Visualizar Boletín De Calificaciones</button>
-                </div>
-              </form>
-            </div>
-          </section>
-
+      <div id="tabla-observador" class="tabla-seccion" style="display: none;">
+        <!-- Otra tabla -->
+      </div>
       
 
-
-
-        <script src="docentes.js"></script>
-        <script src="calificaciones.js"></script>
-      </body>
+  
+  <script src="docentes.js"></script>
+  

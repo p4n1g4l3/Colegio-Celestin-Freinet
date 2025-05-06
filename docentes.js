@@ -1,150 +1,222 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const table = document.getElementById("gradeTable").getElementsByTagName("tbody")[0];
-  const addRowBtn = document.getElementById("addRowBtn");
+const estudiantesPorCurso = {
+    "Jardín": [
+      { nombre: "Juanita Pérez", edad: 5, id : "1001" },
+      { nombre: "Mateo Gómez", edad: 5,  id : "1002"}
+    ],
+    "Transición": [
+      { nombre: "Sofía Rodríguez", edad: 6, id : "1003" },
+      { nombre: "Lucas Moreno", edad: 6, id : "1004" }
+    ],
+    "Primero": [
+      { nombre: "Emilia Torres", edad: 7,  id : "1005" },
+      { nombre: "Tomás García", edad: 7,  id : "1006" }
+    ],
+    "Segundo": [
+      { nombre: "Camila Ruiz", edad: 8,  id : "1007" },
+      { nombre: "Juan Esteban", edad: 8, id : "1008" }
+    ],
+    "Tercero": [
+      { nombre: "Daniela Cruz", edad: 9,  id : "1009" },
+      { nombre: "Gabriel Vega", edad: 9,  id : "10001" }
+    ],
+    "Cuarto": [
+      { nombre: "Sara López", edad: 10,  id : "10011" },
+      { nombre: "Felipe Castro", edad: 10,  id : "10012" }
+    ],
+    "Quinto": [
+      { nombre: "Valentina Navarro", edad: 11, id : "10013" },
+      { nombre: "Simón Ríos", edad: 11,  id : "10014"}
+    ]
+  };
+  
 
-  const estudiantes = [
-    {
-      codigo: "2023129",
-      nombre: "Acevedo Grimaldos Dilan Andrey",
-      notas: [1.0, 2.5, 3.0, 2.8, 3.5, 4.0, 4.2, 5.0, 4.5, 4.8, 4.2, 3.8, 4.0, 4.5, 4.3, 4.6, 5.0, 4.8, 4.7],
-    },
-  ];
+  document.getElementById("showCalificaciones").addEventListener("click", function () {
+    const calificaciones = document.querySelector(".calificaciones-section");
+    const boletin = document.querySelector(".boletin-section");
+    const planilla = document.querySelector(".planilla-estudiantes");
+    const cursos = document.querySelector(".users"); // 👈 sección de cursos
+  
+    if (calificaciones) calificaciones.style.display = "flex";
+    if (boletin) boletin.style.display = "none";
+    if (planilla) planilla.style.display = "none";
+    if (cursos) cursos.style.display = "none"; // 👈 oculta los cursos
+  });
+  
+  
+  
+  document.getElementById("showBoletin").addEventListener("click", function () {
+    document.querySelector(".boletin-section").style.display = "flex";
+    document.querySelector(".calificaciones-section").style.display = "none";
+  });
 
-  function updateDefinitiva(row) {
-    const cells = row.querySelectorAll(".grade");
-    let conceptual = 0, procedimental = 0, actitudinal = 0;
-
-    cells.forEach((cell, i) => {
-      let value = parseFloat(cell.textContent);
-      if (isNaN(value)) value = 0;
-      if (i < 8) conceptual += value;
-      else if (i < 16) procedimental += value;
-      else actitudinal += value;
-
-      if (value < 3.0) {
-        cell.classList.add("low");
-      } else {
-        cell.classList.remove("low");
-      }
-    });
-
-    let conceptualAvg = conceptual / 8;
-    let procedimentalAvg = procedimental / 8;
-    let actitudinalAvg = actitudinal / 3;
-
-    let definitiva = ((conceptualAvg * 0.35) + (procedimentalAvg * 0.35) + (actitudinalAvg * 0.30)).toFixed(2);
-    row.querySelector(".definitiva").textContent = definitiva;
-  }
-
-  function addEventToGrades(row) {
-    row.querySelectorAll(".grade").forEach(cell => {
-      cell.addEventListener("input", () => updateDefinitiva(row));
-    });
-  }
-
-  function deleteRow(event) {
-    const row = event.target.closest("tr");
+function eliminarCurso(btn) {
+    const row = btn.closest("tr");
     row.remove();
   }
 
-  function agregarEstudiantes() {
-    estudiantes.forEach((est, index) => {
-      const row = document.createElement("tr");
+  function agregarCurso() {
+    const tabla = document.getElementById("cursosTable").querySelector("tbody");
+    const nuevaFila = document.createElement("tr");
 
-      row.innerHTML = `
-        <td>${index + 1}</td>
-        <td contenteditable="true">${est.codigo}</td>
-        <td contenteditable="true">${est.nombre}</td>
-        ${est.notas.map(nota => `<td contenteditable="true" class="grade">${nota}</td>`).join("")}
-        <td class="definitiva">0.0</td>
-        <td><button class="delete-btn">❌ Eliminar</button></td>
-      `;
-
-      table.appendChild(row);
-      addEventToGrades(row);
-      row.querySelector(".delete-btn").addEventListener("click", deleteRow);
-      updateDefinitiva(row);
-    });
-  }
-
-  addRowBtn.addEventListener("click", function () {
-    const newRow = table.insertRow();
-    newRow.innerHTML = `
-      <td>${table.rows.length + 1}</td>
-      <td contenteditable="true">Nuevo Código</td>
-      <td contenteditable="true">Nuevo Estudiante</td>
-      ${"<td contenteditable='true' class='grade'>0.0</td>".repeat(19)}
-      <td class="definitiva">0.0</td>
-      <td><button class="delete-btn">❌ Eliminar</button></td>
+    nuevaFila.innerHTML = `
+      <td contenteditable="true">Nuevo Curso</td>
+      <td contenteditable="true">Nombre Docente</td>
+      <td>
+        <button class="view">Ver</button>
+        <button class="delete-btn" onclick="eliminarCurso(this)">Eliminar</button>
+      </td>
     `;
-    addEventToGrades(newRow);
-    newRow.querySelector(".delete-btn").addEventListener("click", deleteRow);
-    updateDefinitiva(newRow);
-  });
-
-  
-  document.querySelectorAll('.dropdown-btn').forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.stopPropagation(); // Evita que el clic se propague al body
-      // Cierra otros menús abiertos
-      document.querySelectorAll('.dropdown-menu').forEach(menu => {
-        if (menu !== this.nextElementSibling) menu.classList.remove('show');
-      });
-      // Abre el menú correspondiente
-      this.nextElementSibling.classList.toggle('show');
-    });
-  });
-
-  // Cierra el menú si haces clic fuera
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-      menu.classList.remove('show');
-    });
-  });
-
-
-
-  // Inicializar estudiantes
-  agregarEstudiantes();
-
-  // Mostrar/Ocultar secciones
-  const calificacionesBtn = document.getElementById("showCalificaciones");
-  const calificacionesSection = document.querySelector(".calificaciones-section");
-  const cursosSection = document.querySelector(".users");
-
-  calificacionesBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    cursosSection.style.display = "none";
-    calificacionesSection.style.display = "block";
-  });
-
-  // FUNCIONALIDAD DEL MENÚ DESPLEGABLE
-  const dropdownItem = document.querySelector(".dropdown-item > a");
-  const subMenu = document.querySelector(".sub-menu-cursos");
-
-  dropdownItem.addEventListener("click", function (e) {
-    e.preventDefault();
-    subMenu.classList.toggle("active");
-  });
-
-  // FORMATO PARA VER O DESCARGAR EL BOLETIN
-  document.getElementById("showBoletin").addEventListener("click", function () {
-    document.querySelector(".calificaciones-section").style.display = "none";
-    document.querySelector(".boletin-section").style.display = "block";
-  });
-
-  document.getElementById("showBoletin").addEventListener("click", function () {
-    ocultarSecciones(); // Oculta todas
-    document.querySelector(".boletin-section").style.display = "block"; // Muestra solo esta
-  });
-  
-  
-  function ocultarSecciones() {
-    document.querySelector(".calificaciones-section").style.display = "none";
-    document.querySelector(".boletin-section").style.display = "none";
-    // Aquí puedes ocultar más secciones si tienes otras
+    tabla.appendChild(nuevaFila);
   }
   
+  document.querySelectorAll(".view").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const curso = this.getAttribute("data-curso") || "Curso no identificado";
+      const estudiantes = estudiantesPorCurso[curso] || [];
+  
+      // Actualiza título
+      document.getElementById("nombreCurso").textContent = curso;
+  
+      // Llena la tabla
+      const tablaBody = document.getElementById("tablaEstudiantes");
+      tablaBody.innerHTML = "";
+  
+      estudiantes.forEach(est => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${est.nombre}</td>
+          <td>${est.edad}</td>
+          <td>${est.id}</td>
+        `;
+        tablaBody.appendChild(fila);
+      });
+  
+      // Muestra la planilla
+      document.querySelector(".planilla-estudiantes").style.display = "block";
+    });
+
+    document.getElementById("cerrarPlanilla").addEventListener("click", function () {
+        document.querySelector(".planilla-estudiantes").style.display = "none";
+      });
+
+  });
+
+  function calcularDefinitivas() {
+    const filas = document.querySelectorAll(".tabla-notas tbody tr");
+    
+    filas.forEach((fila) => {
+      const c = parseFloat(fila.children[1].textContent) || 0;
+      const p = parseFloat(fila.children[2].textContent) || 0;
+      const a = parseFloat(fila.children[3].textContent) || 0;
+      const definitiva = ((c + p + a) / 3).toFixed(2);
+  
+      const celdaDef = fila.querySelector(".definitiva");
+      celdaDef.textContent = definitiva;
+      celdaDef.classList.toggle("roja", definitiva < 3);
+    });
+}
+
+    const verBtns = document.querySelectorAll('.ver-btn');
+    const contenidoDinamico = document.getElementById('contenidoDinamico');
+
+    verBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.submenu').forEach(menu => {
+          if (menu !== btn.nextElementSibling) {
+            menu.style.display = 'none';
+          }
+        });
+
+        const submenu = btn.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+      });
+    });
+
+    document.querySelectorAll('.submenu-opcion').forEach(opcion => {
+      opcion.addEventListener('click', () => {
+        const curso = opcion.dataset.curso;
+        const seccion = opcion.dataset.seccion;
+
+        let contenido = '';
+        switch (seccion) {
+          case 'Planilla':
+            contenido = `<h3>Planilla - ${curso}</h3><p>Contenido de la planilla del curso ${curso}.</p>`;
+            break;
+          case 'Calificaciones':
+            contenido = `<h3>Calificaciones - ${curso}</h3><p>Listado de calificaciones del curso ${curso}.</p>`;
+            break;
+          case 'Observador':
+            contenido = `<h3>Observador - ${curso}</h3><p>Registro de observaciones del curso ${curso}.</p>`;
+            break;
+        }
+
+        contenidoDinamico.innerHTML = contenido;
+      });
+    });
+ 
+    
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('td')) {
+        document.querySelectorAll('.submenu').forEach(menu => {
+          menu.style.display = 'none';
+        });
+      }
+    });
 
 
-});
+  document.querySelectorAll('.submenu-opcion').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const curso = boton.dataset.curso;
+      const seccion = boton.dataset.seccion.toLowerCase(); // ejemplo: "calificaciones"
+
+      // Ocultar todas las secciones
+      document.querySelectorAll('.tabla-seccion').forEach(div => div.style.display = 'none');
+
+      // Mostrar sección de contenido principal
+      const contenedor = document.getElementById('seccion-contenido');
+      contenedor.style.display = 'block';
+
+      // Título dinámico
+      document.getElementById('titulo-seccion').textContent = `${seccion.charAt(0).toUpperCase() + seccion.slice(1)} - ${curso}`;
+
+      // Mostrar la tabla correspondiente
+      const tabla = document.getElementById(`tabla-${seccion}`);
+      if (tabla) {
+        document.getElementById('contenido-seccion').innerHTML = tabla.innerHTML;
+      }
+    });
+  });
+
+  const btnVolver = document.getElementById('btnVolver');
+  const titulo = document.getElementById('titulo-seccion');
+  const tablaCursos = document.getElementById('tabla-cursos');
+
+  btnVolver.addEventListener('click', () => {
+    // Oculta todas las secciones
+    document.querySelectorAll('.tabla-seccion').forEach(div => div.style.display = 'none');
+
+    // Muestra la tabla de cursos
+    if (tablaCursos) {
+      tablaCursos.style.display = 'block';
+    }
+
+    // Cambia el título
+    if (titulo) {
+      titulo.textContent = "Cursos";
+    }
+
+    // Oculta el botón volver
+    btnVolver.style.display = 'none';
+  });
+
+
+
+
+
+  
+
+  
+  
+  
+  
+  
