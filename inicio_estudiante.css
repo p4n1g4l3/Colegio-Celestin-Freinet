@@ -141,7 +141,7 @@ body {
 }
 
 .observer-table th {
-    background: #004080;
+    background: #053aaa;
     color: white;
 }
 
@@ -363,7 +363,7 @@ input, select {
 
 /* Estilos para secciones */
 .section-title {
-    background-color: #004080;
+    background-color: #053aaa;
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
@@ -593,4 +593,4 @@ section {
 }
 .boton-imprimir:hover {
     background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
-}
+}                                       
