@@ -25,7 +25,7 @@
                 <li onclick="mostrarSeccion('asignaturas')">Asignaturas</li>
                 <li onclick="mostrarSeccion('calificaciones')">Calificaciones</li>
                 <li onclick="mostrarSeccion('observador')">Observador</li>
-                <li onclick="mostrarSeccion('boletines')">Boletines</li>
+                <li onclick="mostrarSeccion('horario')">Horario</li>
                 <div class="logo">
                     <img src="./img/logoactualizado.png" alt="Logo" />
                 </div>
@@ -35,10 +35,6 @@
         <!-- Contenido dinámico -->
         <main class="content">
             <section id="miperfil" class="section">
-
-                
-                <h2>Datos del Estudiante</h2>
-
                 <div class="container mt-4">
                     <form id="formulario">
                         <div class="section-title">Información Personal</div>
@@ -513,7 +509,21 @@
                         <h5>COLEGIO CELESTIN FREINET</h5>
                         <h6>INFORME PARCIAL DE CALIFICACIONES</h6>
                       </div>
-                    
+                      <div class="col col-sm-12 col-xs-12 col-12 col-md-4">
+                        <label for="periodo_academico">Período Academico:</label><br>
+                        <label>
+                            <input type="radio" name="periodo_academico" value="1">
+                            Primero</label>
+                        <label>
+                            <input type="radio" name="periodo_academico" value="2">
+                            Segundo</label>
+                        <label>
+                            <input type="radio" name="periodo_academico" value="3">
+                            Tercero</label>
+                        <label>
+                            <input type="radio" name="periodo_academico" value="4">
+                            Cuarto</label>
+                    </div>
                       <div class="row mb-2">
                         <div class="col-10">
                           <table class="tablee table-borderless header-table">
@@ -521,12 +531,12 @@
                               <th>Estudiante:</th><td>QUICASAQUE DIAZ SARA MICHELLE</td>
                               <th>Grado:</th><td>CUARTO</td>
                               <th>Jornada:</th><td>Única</td>
-                              <th>Periodo:</th><td>1</td>
                             </tr>
                           </table>
+                          
                         </div>
                         <div class="col-2">
-                          <img src="foto.jpg" alt="Foto estudiante" class="profile-pic">
+                          <img src="img/logo_colegio_sf.png" alt="Foto estudiante" class="profile-pic">
                         </div>
                       </div>
                     
@@ -584,104 +594,61 @@
                       </tbody>
                     </table>
                   </section>
-                  <section id="informe_preescolar" class="section">
-                    <div class="contenedor">
-                        <h2>RESOLUCION N° 3458 DE NOV.8 DE 2000</h2>
-                        <h3>SISTEMA DE GESTION DE LA SEGURIDAD Y SALUD EN EL TRABAJO (SG-SST)</h3>
-                        <h1>INFORME DE EVALUACION DE ALUMNOS POR PERIODO</h1>
-                    
-                        <table class="tabla-superior">
-                          <tr>
-                            <th>VERSION</th>
-                            <th>FECHA ACTUALIZACION</th>
-                            <th>CODIGO</th>
-                            <th>PAGINA</th>
-                          </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>23 ENERO DE 2017</td>
-                            <td>T001</td>
-                            <td>1 DE 1</td>
-                          </tr>
+                  
+
+
+                <section id="observador" class="section">
+                    <h2>Observador del Estudiante</h2>
+                    <p>Aquí puedes ver las observaciones registradas sobre tu desempeño.</p>
+                            <table class="observer-table">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Desempeño Académico</th>
+                                        <th>Desempeño Comportamental</th>
+                                        <th>Estrategias de Seguimiento</th>
+                                        <th>Firma Estudiante/Acudiente</th>
+                                        <th>Firma Profesor</th>
+                                    </tr>
+                                </thead>
+                            <tbody id="observerBody"></tbody>
                         </table>
-                    
-                        <p class="frase">“Esperamos contribuir con el desarrollo integral de nuestros educandos”</p>
-                    
-                        <h2>INFORME DE DESTREZAS Y HABILIDADES</h2>
-                    
-                        <p><strong>ESTUDIANTE:</strong> ROJAS HERRERA EMMANUEL ALEJANDRO &nbsp;&nbsp;&nbsp;&nbsp; <strong>GRADO:</strong> PRE-JARDIN</p>
-                        <p><strong>FECHA:</strong> 19 DE SEPTIEMBRE 2024 &nbsp;&nbsp;&nbsp;&nbsp; <strong>PERIODO:</strong> TERCERO</p>
-                    
-                        <table class="tabla-dimensiones">
-                          <tr>
-                            <th>DIMENSIONES</th>
-                            <th>INDICADORES DE LOGRO</th>
-                            <th>LO LOGRÓ</th>
-                            <th>ESTÁ EN PROCESO</th>
-                          </tr>
-                    
-                          <!-- DIMENSIÓN COGNITIVA -->
-                          <tr class="dimension"><td colspan="4">DIMENSIÓN COGNITIVA<br><span>(Pre matemáticas - libro de actividades psicomotrices)</span></td></tr>
-                          <tr><td></td><td>Realiza el trazo correcto de los números de 1 a 10.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Cuenta e identifica los números hasta 10.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Realiza conteos y agrupaciones de los números hasta 10.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Completa secuencias numéricas con propiedad.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Discrimina objetos de acuerdo con criterios dados.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Reconoce las nociones espaciales de objetos, personas y cosas.</td><td></td><td></td></tr>
-                    
-                          <!-- DIMENSIÓN COMUNICATIVA -->
-                          <tr class="dimension"><td colspan="4">DIMENSIÓN COMUNICATIVA<br><span>(Preescritura - prelectura)</span></td></tr>
-                          <tr><td></td><td>Identifica las vocales y las asocia con imagen.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Realiza el trazo correcto de las vocales.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Discrimina visual y auditivamente las consonantes m y p, y las identifica en palabras.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Identifica la letra m y la asocia en palabras correspondientes.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Realiza oraciones cortas usando combinaciones silábicas.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Desarrolla con facilidad, responsabilidad y autonomía sus guías y tareas.</td><td></td><td></td></tr>
-                    
-                          <!-- DIMENSIÓN ESTÉTICA -->
-                          <tr class="dimension"><td colspan="4">DIMENSIÓN ESTÉTICA<br><span>(Trazos, coloreado y música)</span></td></tr>
-                          <tr><td></td><td>Realiza sus trabajos artísticos siguiendo buenos hábitos de orden y presentación.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Percibe visualmente y reconoce los colores primarios y secundarios.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Posee destreza en el manejo de materiales como pintura, punzón, papel, plastilina, lápiz, colores y crayolas.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Elabora sus propios trabajos utilizando diferentes materiales y técnicas.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Sigue el ritmo de las canciones y coordina movimientos de lateralidad y equilibrio.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Rellena y delinea figuras con plastilina, vinilos, marcadores y escarchas.</td><td></td><td></td></tr>
-                    
-                          <!-- INGLÉS -->
-                          <tr class="dimension"><td colspan="4">HUMANIDADES - IDIOMA EXTRANJERO: INGLÉS</td></tr>
-                          <tr><td></td><td>Entona canciones en inglés.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Reconoce el vocabulario de algunos números.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Pronuncia en inglés algunas palabras como comandos, colores, frutas, entre otras.</td><td></td><td></td></tr>
-                    
-                          <!-- EDUCACIÓN FÍSICA -->
-                          <tr class="dimension"><td colspan="4">DIMENSIÓN CORPORAL (EDUCACIÓN FÍSICA)</td></tr>
-                          <tr><td></td><td>Fomenta el desarrollo y la destreza de sus habilidades.</td><td></td><td></td></tr>
-                          <tr><td></td><td>Demuestra un adecuado desarrollo de su coordinación motriz gruesa.</td><td></td><td></td></tr>
+                </section>
+                <section id="horario" class="section">
+                      
+                        <div class="title">Horario De Clases Del Grado: 04</div>
+                      
+                        <table class="table table-bordered table-striped mt-3">
+                          <thead class="table-dark">
+                            <tr>
+                              <th>Hora</th>
+                              <th>Lunes</th>
+                              <th>Martes</th>
+                              <th>Miércoles</th>
+                              <th>Jueves</th>
+                              <th>Viernes</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr><td>1</td><td>ETICA-SO<br>SANTOS C</td><td>E.FIS-SO<br>ROMMEL M</td><td>CAST-SO<br>ANA B</td><td>TECNI-SO<br>ISAAC O</td><td>ETICA-SO<br>SANTOS C</td></tr>
+                            <tr><td>2</td><td>INVES-SO<br>XIMENA R</td><td>E.FIS-SO<br>ROMMEL M</td><td>P.LEC-SO<br>ELSY C</td><td>TECNI-SO<br>ISAAC O</td><td>SOC-SO<br>MARGARITA P</td></tr>
+                            <tr><td>3</td><td>MATEM-SO<br>MARORA A</td><td>CAST-SO<br>ANA B</td><td>INGLE-SO<br>CLARA G</td><td>C.NAT-SO<br>XIMENA R</td><td>MATEM-SO<br>MARORA A</td></tr>
+                            <tr><td>4</td><td>MATEM-SO<br>MARORA A</td><td>CAST-SO<br>ANA B</td><td>RELIG-SO<br>LUIS M</td><td>C.NAT-SO<br>XIMENA R</td><td>MATEM-SO<br>MARORA A</td></tr>
+                            <tr><td>5</td><td>CAST-SO<br>ANA B</td><td>EMPRE-SO<br>GERMAN D</td><td>C.NAT-SO<br>XIMENA R</td><td>SOC-SO<br>MARGARITA P</td><td>ART-SO<br>FABIO Y</td></tr>
+                            <tr><td>6</td><td>CAST-SO<br>ANA B</td><td>MATEM-SO<br>MARORA A</td><td>SOC-SO<br>MARGARITA P</td><td>INGLE-SO<br>CLARA G</td><td>C.NAT-SO<br>XIMENA R</td></tr>
+                            <tr><td>7</td><td>INGLE-SO<br>CLARA G</td><td>MATEM-SO<br>MARORA A</td><td>SOC-SO<br>MARGARITA P</td><td>INGLE-SO<br>CLARA G</td><td>C.NAT-SO<br>XIMENA R</td></tr>
+                          </tbody>
                         </table>
-                          <p>LIC. JENNY MILENA LOPEZ C<br>DIRECTORA DE CURSO</p>
-                          <button class="boton-imprimir">Imprimir Preinforme</button>
+                      
+                        <div class="text-center btn-print">
+                          <button onclick="window.print()" class="btn btn-primary">Imprimir</button>
                         </div>
                       </div>
-                  </section>
+                </section>
 
-
-            <section id="observador" class="section">
-                <h2>Observador del Estudiante</h2>
-                <p>Aquí puedes ver las observaciones registradas sobre tu desempeño.</p>
-                        <table class="observer-table">
-                            <thead>
-                                <tr>
-                                    <th>Fecha</th>
-                                    <th>Desempeño Académico</th>
-                                    <th>Desempeño Comportamental</th>
-                                    <th>Estrategias de Seguimiento</th>
-                                    <th>Firma Estudiante/Acudiente</th>
-                                    <th>Firma Profesor</th>
-                                </tr>
-                            </thead>
-                        <tbody id="observerBody"></tbody>
-                    </table>
-            </section>
+                <section id="miperfil" class="section">
+                    <h2>Mi Perfil</h2>
+                    <p>En esta sección puedes ver tus datos personales y el curso al que perteneces.</p>
         </main>
     </div>
     <script src="inicio_estudiante.js"></script>

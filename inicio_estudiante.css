@@ -26,16 +26,18 @@ body {
 
 /* Botón de cerrar sesión */
 .logout-btn {
-    background: red;
+    background: #e74c3c;
     color: white;
     border: none;
     padding: 8px 15px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background 0.3s;
+    font-weight: bold;
 }
 
 .logout-btn:hover {
-    background: darkred;
+    background: #c0392b;
 }
 
 /* Contenedor principal */
@@ -101,7 +103,7 @@ body {
 .section {
     display: none;
     background: white;
-    padding: 55px;
+    padding: 5px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -593,4 +595,54 @@ section {
 }
 .boton-imprimir:hover {
     background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
-}                                       
+}          
+
+.header-image {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    background-color: #dee2e6;
+    padding: 12px 15px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .table {
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .table thead th {
+    background-color:#053aaa;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table td, .table th {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .btn-print {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .btn-print button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }                             
