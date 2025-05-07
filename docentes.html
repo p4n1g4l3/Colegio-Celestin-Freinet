@@ -14,28 +14,13 @@
     <div class="sidebar">
         <h2>DOCENTES</h2>
         <ul class="sidebar-menu">
-        <li>
-            <a href="#"><i class="fas fa-users"></i> Cursos</a>
-        </li>
-        <li>
-            <a href="#" id="showCalificaciones"><i class="fas fa-book"></i> Calificaciones</a>
-        </li>
-        <li>
-            <a href="#"><i class="fas fa-bullhorn"></i> Circulares</a>
-        </li>
-        <li>
-            <a href="#"><i class="fas fa-book"></i> Horarios</a>
-        </li>
-        <li>
-            <a href="#"><i class="fas fa-clipboard"></i> Planillas</a>
-        </li>
-        <li>
-            <a href="#" id="showBoletin"><i class="fas fa-clipboard"></i> Boletines</a>
-        </li>
-        <li>
-            <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Salir</a>
-        </li>
-        </ul>
+          <li><a href="#" id="showCursos"><i class="fas fa-book"></i> Cursos</a></li>
+          <li><a href="#" id="showCalificaciones"><i class="fas fa-book"></i> Calificaciones</a></li>
+          <li><a href="#" id="showBoletin"><i class="fas fa-bullhorn"></i> Boletines</a></li>
+          <li><a href="#" id="showHorarios"><i class="fas fa-book"></i> Horarios</a></li>
+          <li><a href="#" id="showPlanillas"><i class="fas fa-clipboard"></i> Planillas</a></li>
+          <li><a href="#" id="showCirculares"><i class="fas fa-clipboard"></i>Circulares</a></li>  
+          <li><a href="#" id="showConfiguracion"><i class="fas fa-clipboard"></i> Configuracion - Mi Perfil</a></li>                                                                                                          
     </div>
     
 
@@ -53,7 +38,7 @@
   <div class="main-content">
     <!-- SECCIÓN DE CURSOS -->
 
-    <div id="tabla-cursos" class="tabla-seccion" style="display: block;">
+    <div id="seccionCursos" style="display: block;">
       <table class="tabla-cursos">
         <thead>
           <tr>
@@ -170,9 +155,8 @@
       
       <!-- SECCIÓN PLANILLA DE ESTUDIANTES  -->
 
-      <section class="planilla-estudiantes" style="display: none;">
-        <button id="btnVolver" class="btn btn-secondary mb-3">⬅️ Volver</button>
-          <h2>Lista de Estudiantes del Curso: <span id="nombreCurso"></span></h2>
+      <div id="seccionPlanillas" style="display: none;">
+          <h2> Lista de Estudiantes del Curso: <span id="nombreCurso"></span></h2>
           <table>
               <thead>
                   <tr>
@@ -195,22 +179,13 @@
               </tr>
             </tbody>
           </table>
-          <button id="cerrarPlanilla" class="cerrar-btn">Cerrar</button>
-        </section>
+     </div>
 
 
-<!-- Sección de contenido dinámico -->
-<div id="seccion-contenido" class="seccion-contenido" style="display: none;">
-  <h3 id="titulo-seccion"></h3>
-  <div id="contenido-seccion">
-    <!-- Aquí se insertarán dinámicamente las tablas -->
-  </div>
-</div>
+<!-- SECCION DE CALIFICACIONES -->
 
 
-
-<div id="tabla-calificaciones" class="tabla-seccion" style="display: none;">
-  <button id="btnVolver" class="btn btn-secondary mb-3">⬅️ Volver</button>
+<div id="seccionCalificaciones" style="display: none;">
 <table class="tabla-notas">
 <section class="calificaciones-section d-none">
   <div class="container mt-5">
@@ -247,28 +222,267 @@
         </tbody>
       </table>
     </div>
-
-    <div class="text-center mt-4">
-      <button id="addRowBtn" class="btn btn-primary">
-        ➕ Agregar Estudiante
-      </button>
-    </div>
-  </div>
 </section>
 
 
+<!-- SECCION DE BOLETINES-->
+
+<div id="seccionBoletines" style="display: none;">
+  <div class="boletin">
+    <div class="encabezado">
+      SISTEMA DE GESTIÓN DE LA SEGURIDAD Y SALUD EN EL TRABAJO (SG-SST)<br>
+      INFORME DE EVALUACIÓN DE ALUMNOS POR PERIODO
+    </div>
+
+    <div class="info">
+      <div><strong>VERSIÓN:</strong> 01</div>
+      <div><strong>FECHA ACTUALIZACIÓN:</strong> 2024</div>
+      <div><strong>CÓDIGO:</strong> FORM-EDU-001</div>
+      <div><strong>PÁGINA:</strong> 1 de 1</div>
+    </div>
+
+    <div class="encabezado">“Esperamos contribuir con el desarrollo integral de nuestros educandos”</div>
+
+    <table>
+      <tr>
+        <td colspan="2"><strong>ALUMNO:</strong> __________________________________________</td>
+        <td><strong>GRADO:</strong> _____</td>
+        <td><strong>SEDE:</strong> ____________</td>
+        <td><strong>JORNADA:</strong> _________</td>
+      </tr>
+    </table>
+
+    <!-- Repetible por asignatura -->
+    <table>
+      <tr>
+        <th colspan="6" class="asignatura">CIENCIAS NATURALES</th>
+      </tr>
+      <tr>
+        <td colspan="6"><strong>LOGRO:</strong> DESCRIBE LAS FUNCIONES DE LOS SERES VIVOS Y SUS PARTES.</td>
+      </tr>
+      <tr>
+        <td colspan="6" class="fortaleza"><strong>FORTALEZA:</strong> Participa activamente en clase y logra identificar órganos vitales.</td>
+      </tr>
+      <tr class="periodo-boxes">
+        <td><strong>P1</strong><br>5.0</td>
+        <td><strong>P2</strong><br>4.5</td>
+        <td><strong>P3</strong><br>4.8</td>
+        <td><strong>P4</strong><br>5.0</td>
+        <td><strong>FINAL</strong><br>4.8</td>
+        <td><strong>DESEMPEÑO</strong><br>SUPERIOR</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="6" class="asignatura">QUIMICA</th>
+      </tr>
+      <tr>
+        <td colspan="6"><strong>LOGRO:</strong> DESCRIBE LAS FUNCIONES DE LOS SERES VIVOS Y SUS PARTES.</td>
+      </tr>
+      <tr>
+        <td colspan="6" class="fortaleza"><strong>FORTALEZA:</strong> Participa activamente en clase y logra identificar órganos vitales.</td>
+      </tr>
+      <tr class="periodo-boxes">
+        <td><strong>P1</strong><br>5.0</td>
+        <td><strong>P2</strong><br>4.5</td>
+        <td><strong>P3</strong><br>4.8</td>
+        <td><strong>P4</strong><br>5.0</td>
+        <td><strong>FINAL</strong><br>4.8</td>
+        <td><strong>DESEMPEÑO</strong><br>SUPERIOR</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="6" class="asignatura">LENGUA CASTELLANA</th>
+      </tr>
+      <tr>
+        <td colspan="6"><strong>LOGRO:</strong> DESCRIBE LAS FUNCIONES DE LOS SERES VIVOS Y SUS PARTES.</td>
+      </tr>
+      <tr>
+        <td colspan="6" class="fortaleza"><strong>FORTALEZA:</strong> Participa activamente en clase y logra identificar órganos vitales.</td>
+      </tr>
+      <tr class="periodo-boxes">
+        <td><strong>P1</strong><br>5.0</td>
+        <td><strong>P2</strong><br>4.5</td>
+        <td><strong>P3</strong><br>4.8</td>
+        <td><strong>P4</strong><br>5.0</td>
+        <td><strong>FINAL</strong><br>4.8</td>
+        <td><strong>DESEMPEÑO</strong><br>SUPERIOR</td>
+      </tr>
+    </table>
+
+    <!-- Repite tabla por cada área académica con su contenido correspondiente -->
+
+    <div class="notas-finales">
+      <strong>OBSERVACIONES:</strong><br>
+      _______________________________________________<br>
+      _______________________________________________
+    </div>
+
+    <div class="leyenda">
+      <strong>ESCALA DE VALORACIÓN:</strong><br>
+      DESEMPEÑO: D: 1.0 a 2.9  |  B: 3.0 a 3.9  |  A: 4.0 a 4.4  |  S: 4.5 a 5.0
+    </div>
+
+    <div class="firmas">
+      <div><span class="firma-linea"></span> DOCENTE</div>
+      <div><span class="firma-linea"></span> DIRECTOR DE GRUPO</div>
+      <div><span class="firma-linea"></span> FIRMA PADRE DE FAMILIA</div>
+    </div>
+  </div>
+</div>
 
 
-      
+<!-- SECCION DE HORARIOS -->
 
-      <div id="tabla-planilla" class="tabla-seccion" style="display: none;">
-        <!-- Otra tabla -->
+
+<div id="seccionHorarios" style="display: none;">
+  <div class="encabezado">
+    <div class="logo">
+      <img src="logo-colegio.png" alt="Logo Colegio">
+    </div>
+    <div class="info">
+      <h3>SISTEMA DE GESTIÓN DE LA SEGURIDAD Y SALUD EN EL TRABAJO (SG-SST)</h3>
+      <h2>FORMATO CERTIFICADO LABORAL</h2>
+      <table class="tabla-datos">
+        <tr>
+          <th>VERSIÓN</th>
+          <th>FECHA ACTUALIZACIÓN</th>
+          <th>CÓDIGO</th>
+          <th>PÁGINA</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>23 ENERO DE 2017</td>
+          <td>Ñ001</td>
+          <td>1 DE 1</td>
+        </tr>
+      </table>
+      <p class="resolucion">RESOLUCIÓN N° 3458 DE NOV. 8 DE 2000</p>
+    </div>
+  </div>
+
+  <h1 class="titulo">HORARIO DE CLASES</h1>
+
+  <h2 class="grado">GRADO SEGUNDO</h2>
+
+  <table class="tabla-horario">
+    <thead>
+      <tr>
+        <th>HORA</th>
+        <th>LUNES</th>
+        <th>MARTES</th>
+        <th>MIÉRCOLES</th>
+        <th>JUEVES</th>
+        <th>VIERNES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>7:00 AM - 7:50 AM</td><td>COMPRENSIÓN</td><td>CASTELLANO</td><td>CASTELLANO</td><td>ED. FÍSICA</td><td>MATEMÁTICAS</td></tr>
+      <tr><td>7:50 AM - 8:40 AM</td><td>INFORMÁTICA</td><td>NATURALES</td><td>CASTELLANO</td><td>SOCIALES</td><td>INGLÉS</td></tr>
+      <tr><td>8:40 AM - 9:30 AM</td><td>NATURALES</td><td>SOCIALES</td><td>NATURALES</td><td>INGLÉS</td><td>SOCIALES</td></tr>
+      <tr class="descanso"><td colspan="6">D E S C A N S O</td></tr>
+      <tr><td>10:00 AM - 10:50 AM</td><td>INGLÉS</td><td>GEOMETRÍA</td><td>INGLÉS</td><td>MATEMÁTICAS</td><td>INFORMÁTICA</td></tr>
+      <tr><td>10:50 AM - 11:40 AM</td><td>MATEMÁTICAS</td><td>ED. FÍSICA</td><td>INGLÉS</td><td>MATEMÁTICAS</td><td>CASTELLANO</td></tr>
+      <tr class="descanso"><td colspan="6">D E S C A N S O</td></tr>
+      <tr><td>12:00 PM - 12:50 PM</td><td>ARTÍSTICA</td><td>MATEMÁTICAS</td><td>RELIGIÓN</td><td>CASTELLANO</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <p>
+      E-MAIL: celestinfreinet_2010@hotmail.com <br>
+      CALLE 22A # 11A-32 CEL. 3118779748 <br>
+      SOGAMOSO - BOYACÁ
+    </p>
+  </footer>
+</div> 
+
+
+<!-- SECCION DE CONFIGURACION Y PERFIL -->
+
+
+<div id="seccionConfiguracion" style="display: none;">
+  <div class="perfil-container">
+    <h2>👤 Mi Perfil</h2>
+
+    <!-- Foto de perfil -->
+    <div class="foto-perfil">
+      <img src="foto-perfil.png" alt="Foto de perfil" id="fotoPreview">
+      <input type="file" id="fotoPerfil" accept="image/*">
+    </div>
+
+    <div class="perfil-box">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" value="Laura Gómez" />
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" value="laura.gomez@colegio.edu.co" />
+
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" value="3101234567" />
+
+      <label for="experiencia">Años de experiencia:</label>
+      <input type="number" id="experiencia" value="5" min="0" />
+
+      <label for="grados">Grados a cargo:</label>
+      <input type="text" id="grados" value="Segundo, Tercero" placeholder="Ej: Primero, Segundo" />
+
+      <label for="contrasena">Nueva contraseña:</label>
+      <input type="password" id="contrasena" />
+
+      <label for="confirmarContrasena">Confirmar nueva contraseña:</label>
+      <input type="password" id="confirmarContrasena" />
+
+      <label for="cedula">Subir cédula o título académico:</label>
+      <input type="file" id="cedula" accept=".pdf,.jpg,.png" />
+
+      <div class="perfil-actions">
+        <button class="btn-guardar">💾 Guardar Cambios</button>
+        <button class="btn-cerrar-sesion">🔓 Cerrar Sesión</button>
       </div>
-      
-      <div id="tabla-observador" class="tabla-seccion" style="display: none;">
-        <!-- Otra tabla -->
+
+      <div class="descargas">
+        <a href="certificado-laboral.pdf" download>📄 Descargar Certificado Laboral (PDF)</a><br>
+        <a href="manual-usuario.pdf" target="_blank">📘 Ver Manual de Usuario</a>
       </div>
-      
+    </div>
+  </div>
+</div>
+
+
+<!-- SECCION DE CIRCULARES -->
+
+
+
+<div id="seccionCirculares" style="display: none;">
+  <div class="circulares-container">
+    <h2>📢 Circulares Institucionales</h2>
+
+    <div class="circular">
+      <h3>📌 Circular N°01 - Inicio de Clases</h3>
+      <p><strong>Fecha:</strong> 08 de enero de 2025</p>
+      <p>Se informa que las clases del año escolar 2025 iniciarán el lunes 15 de enero. Todos los docentes deben presentarse a inducción institucional el 12 de enero.</p>
+      <a href="circular-01.pdf" class="btn-descargar" download>📄 Descargar Circular</a>
+    </div>
+
+    <div class="circular">
+      <h3>📌 Circular N°02 - Reunión Docentes</h3>
+      <p><strong>Fecha:</strong> 15 de febrero de 2025</p>
+      <p>Convocatoria a reunión general de docentes para tratar temas académicos y convivenciales. Lugar: Sala de juntas - Hora: 3:00 p.m.</p>
+      <a href="circular-02.pdf" class="btn-descargar" download>📄 Descargar Circular</a>
+    </div>
+
+    <div class="circular">
+      <h3>📌 Circular N°03 - Evaluaciones</h3>
+      <p><strong>Fecha:</strong> 3 de marzo de 2025</p>
+      <p>Se comparte el cronograma de evaluaciones del primer periodo. Revisar y retroalimentar si es necesario.</p>
+      <a href="circular-03.pdf" class="btn-descargar" download>📄 Descargar Circular</a>
+    </div>
+  </div>
+</div>
+
+
 
   
   <script src="docentes.js"></script>
