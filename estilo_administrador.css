@@ -114,6 +114,14 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+#tablaDeCursos{
+    padding: 100px;
+}
+
+#usuarios{
+    margin-top: -170px;
+}
+
 .seccion {
     margin-bottom: 30px;
     padding-bottom: 20px;
@@ -171,7 +179,7 @@ body {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    margin-bottom: 200px;
 }
 
 .content-section.active {
