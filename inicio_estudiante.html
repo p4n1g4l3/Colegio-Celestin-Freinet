@@ -6,6 +6,7 @@
     <title>Perfil Estudiante | Celestin Freinet</title>
     <link rel="icon" href="img/logoactualizado.png" type="image/x-icon">
     <link rel="stylesheet" href="inicio_estudiante.css">
+    <link rel="stylesheet" href="Accesibilidad/custom.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -38,6 +39,7 @@
                 <div class="container mt-4">
                     <form id="formulario">
                         <div class="section-title">Información Personal</div>
+                        <p>Aquí puedes ver tu información personal.</p>
                         <div class="col-2">
                             <img src="img/logo_colegio_sf.png" alt="Foto estudiante" class="profile-pic">
                           </div>
@@ -462,10 +464,11 @@
                 </section>
 
                 
-                <section id="asignaturas" class="section">
+                <section id="asignaturas" class="section">      
                     <div class="container mt-4">
                         <form id="formulario">
                             <div class="section-title">Asignaturas</div>
+                            <p>Aquí puedes ver las asignaturas que cursas.</p>
                             <div class="col-md-8">
                             <table class="table table-bordered header-table">
                         <tr>
@@ -506,6 +509,7 @@
 
                 <section id="calificaciones" class="section active">
                     <div class="section-title"><center>Calificaciones</center></div>
+                    <p>Aquí puedes ver las calificaciones de tus asignaturas.</p>
                       <div class="col col-sm-12 col-xs-12 col-12 col-md-4">
                         <label for="periodo_academico">Período Academico:</label><br>
                         <label>
@@ -588,7 +592,7 @@
 
 
                 <section id="observador" class="section">
-                    <h2>Observador del Estudiante</h2>
+                     <div class="section-title"><center>Observador Del Estudiante</center></div>
                     <p>Aquí puedes ver las observaciones registradas sobre tu desempeño.</p>
                             <table class="observer-table">
                                 <thead>
@@ -605,8 +609,8 @@
                         </table>
                 </section>
                 <section id="horario" class="section">
-                      
-                        <div class="title">Horario De Clases Del Grado: 04</div>
+                       <div class="section-title"><center>Horario De Clases</center></div>
+                       <p>Aquí puedes ver el horario de tus clases.</p>
                       
                         <table class="table table-bordered table-striped mt-3">
                           <thead class="table-dark">
@@ -637,6 +641,8 @@
                 </section>
     </div>
     <script src="inicio_estudiante.js"></script>
+    <script src="Accesibilidad/custom.js"></script>
+    <script src="Accesibilidad/sienna.js"></script>
     <script>
         document.getElementById("formulario").addEventListener("submit", function(event) {
             event.preventDefault();
