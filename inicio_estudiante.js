@@ -8,40 +8,6 @@ function mostrarSeccion(seccion) {
     // Mostrar la sección seleccionada
     document.getElementById(seccion).classList.add("active");
 }
-// Datos simulados de calificaciones
-const calificaciones = [
-    { asignatura: "Matemáticas", nota: 4.5, observacion: "Muy bien" },
-    { asignatura: "Ciencias", nota: 3.2, observacion: "Puede mejorar" },
-    { asignatura: "Historia", nota: 2.8, observacion: "Debe reforzar" },
-    { asignatura: "Inglés", nota: 4.8, observacion: "Excelente" },
-    { asignatura: "Arte", nota: 3.9, observacion: "Buen desempeño" }
-];
-
-// Función para mostrar las calificaciones en la tabla
-function mostrarCalificaciones() {
-    const gradesBody = document.getElementById("gradesBody");
-    gradesBody.innerHTML = ""; // Limpiar tabla antes de agregar datos
-
-    calificaciones.forEach(calif => {
-        const row = document.createElement("tr");
-
-        // Aplicar colores según la calificación
-        let gradeClass = "good";
-        if (calif.nota < 3.0) {
-            gradeClass = "bad";
-        } else if (calif.nota < 4.0) {
-            gradeClass = "regular";
-        }
-
-        row.innerHTML = `
-            <td>${calif.asignatura}</td>
-            <td class="grade ${gradeClass}">${calif.nota.toFixed(1)}</td>
-            <td>${calif.observacion}</td>
-        `;
-        gradesBody.appendChild(row);
-    });
-}
-
 
 // Datos simulados del observador
 const observaciones = [
@@ -121,53 +87,6 @@ function cerrarSesion() {
     return confirmar;
 }
 
-const datosMaterias = {
-    lengua_castellana: {
-      actividades: ["Investigación", "Quiz", "Exposición"],
-      notas: ["4.5", "3.8", "5.0"],
-      observaciones: ["Muy bien", "Puede mejorar", "Excelente"]
-    },
-    matematicas: {
-      actividades: ["Ejercicio 1", "Evaluación", "Taller"],
-      notas: ["3.5", "4.0", "4.2"],
-      observaciones: ["Regular", "Buena", "Bien hecho"]
-    },
-    ingles: {
-      actividades: ["Listening", "Speaking", "Grammar"],
-      notas: ["4.8", "4.5", "4.6"],
-      observaciones: ["Excelente", "Muy buena", "Correcta"]
-    },
-    Ciencias_Naturales: {
-      actividades: ["Experimento", "Informe", "Examen"],
-      notas: ["3.0", "4.0", "3.5"],
-      observaciones: ["Necesita mejorar", "Bien", "Regular"]
-    },
-    Ciencias_Sociales: {
-      actividades: ["Lectura", "Debate", "Proyecto"],
-      notas: ["4.2", "3.8", "4.0"],
-      observaciones: ["Buena", "Puede mejorar", "Bien"]
-    },
-    Educación_Artística: {
-      actividades: ["Dibujo", "Pintura", "Escultura"],
-      notas: ["3.8", "4.0", "4.2"],
-      observaciones: ["Regular", "Bien", "Excelente"]
-    },
-    Religión_o_Ética_y_Valores_Humanos: {
-      actividades: ["valores", "religion", "ética"],
-      notas: ["4.5", "4.0", "3.8"],
-      observaciones: ["Muy bien", "Bien", "Regular"]
-    },
-    Educación_Física: {
-      actividades: ["Fútbol", "Baloncesto", "Tenis"],
-      notas: ["4.0", "3.8", "4.2"],
-      observaciones: ["Regular", "Bien", "Excelente"]
-    },
-    Tecnología_e_Informática: {
-      actividades: ["Programación", "Redes", "Base de Datos"],
-      notas: ["4.0", "3.8", "4.2"], 
-      observaciones: ["Regular", "Bien", "Excelente"]
-    }
-  };
 
   function mostrarCuadro() {
     const materia = document.getElementById("materiaSelect").value;
